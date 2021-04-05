@@ -1,0 +1,64 @@
+// ==========================================================================
+// dinosaur
+// ==========================================================================
+// -----------------------------------------------------------------
+// dinosaur
+// -----------------------------------------------------------------
+.p-dinosaur__list {
+  @include boxWrapColumn;
+}
+.p-dinosaur__category {
+  @include boxLabel;
+  border-radius: 20px;
+  color: #fff;
+  &[data-category="dragon"] {
+    background-color: #c45719;
+  }
+  &[data-category="bird"] {
+    background-color: #0f75b9;
+  }
+}
+.p-dinosaur__eyecatch {
+  @include pageEyecatch;
+  margin-bottom: 3rem; // Cancel margin-bottom in pageEyeCatch
+}
+.p-dinosaur__slide {
+  position: relative;
+  top: 0;
+  left: 0;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -30px;
+    display: block;
+    background: url('../../../../images/dinosaur-accent.png') center center / contain no-repeat;
+    width: 160px;
+    height: 40px;
+    z-index: $z-level-xs;
+  }
+}
+
+// -----------------------------------------------------------------
+// related
+// -----------------------------------------------------------------
+.p-related__list {
+  @include boxWrap;
+}
+.p-related__item {
+  &:not(:first-child) {
+    margin-left: .5em;
+  }
+}
+// -----------------------------------------------------------------
+// button favorite
+// -----------------------------------------------------------------
+.p-dinosaur__favorite {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: block;
+  width: 50px;
+  height: 50px;
+  z-index: $z-level-m;
+}

@@ -1,0 +1,76 @@
+// ==========================================================================
+// mixins
+// ==========================================================================
+// -----------------------------------------------------------------
+// media
+// -----------------------------------------------------------------
+@mixin pc {
+  @media screen and (min-width: 970px) {
+    @content;   
+  }
+}
+
+// -----------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------
+@mixin font-rocknroll {
+  font-family: 'RocknRoll One', sans-serif;
+  font-weight: 400;
+}
+@mixin font-opensans {
+  font-family: 'Open Sans', sans-serif;
+}
+@mixin font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+// -----------------------------------------------------------------
+// button reset
+// -----------------------------------------------------------------
+@mixin buttonReset($border: none) {
+  border: $border;
+  appearance: none;
+  outline: none;
+}
+// -----------------------------------------------------------------
+// Box Wrap
+// -----------------------------------------------------------------
+@mixin boxWrap {
+  display: flex;
+  list-style: none;
+}
+@mixin boxWrapRow {
+  @include boxWrap;
+  flex-direction: column;
+}
+@mixin boxWrapColumn {
+  @include boxWrap;
+  flex-wrap: wrap;
+  .c-box {
+    width: calc(50% - .5em);
+    @include pc {
+      width: calc(33% - .5em);
+    }
+  }
+}
+// -----------------------------------------------------------------
+// Box label
+// -----------------------------------------------------------------
+@mixin boxLabel {
+  display: inline-block;
+  font-size: .8em;
+  padding: 0 .5em;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+// -----------------------------------------------------------------
+// page eyecatch
+// -----------------------------------------------------------------
+@mixin pageEyecatch {
+  display: block;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}

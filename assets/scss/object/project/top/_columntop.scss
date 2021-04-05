@@ -1,0 +1,10 @@
+// -----------------------------------------------------------------
+// Column Top
+// -----------------------------------------------------------------
+.p-columntop {
+  @include boxWrapColumn;
+}
+.p-columntop__list {
+  display: flex;
+  flex-wrap: wrap;
+}

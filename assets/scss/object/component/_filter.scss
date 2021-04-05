@@ -1,0 +1,78 @@
+// -----------------------------------------------------------------
+// filter
+// -----------------------------------------------------------------
+.c-filter {
+  position: relative;
+}
+.c-filter__button {
+  @include buttonReset;
+  position: relative;
+  width: 100%;
+  height: 30px;
+  padding-left: 2.5em;
+  line-height: 30px;
+  text-align: left;
+  color: $black-600-c;
+  background-color: $black-100-c;
+  &::after {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: .5em;
+    color: $black-300-c;
+    transform: translateY(-50%);
+  }
+}
+.c-filter__icon {
+  position: absolute;
+  top: 50%;
+  left: .5em;
+  color: $black-300-c;
+  transform: translateY(-50%);
+}
+.c-filter__window {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 300px;
+  height: auto;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: $black-100-c;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s;
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.c-filter__window__bottom {
+  position: absolute;
+  bottom: 1rem;
+  right: 0;
+  left: 0;
+  margin: auto;
+  padding: 0 2rem;
+}
+.c-filter__submit {
+  @include buttonReset;
+}
+.c-filter__window__cancel {
+  display: block;
+  text-align: center;
+  font-size: .8em;
+  color: $black-600-c;
+}
+.c-filter__select__wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.c-filter__select {
+  background-color: $black-100-c;
+  border: none;
+  outline: none;
+  height: 30px;
+}

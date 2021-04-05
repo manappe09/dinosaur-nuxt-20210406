@@ -1,0 +1,10 @@
+// -----------------------------------------------------------------
+// Museum Top
+// -----------------------------------------------------------------
+.p-museumtop {
+  @include boxWrapColumn;
+}
+.p-museumtop__list {
+  display: flex;
+  flex-wrap: wrap;
+}

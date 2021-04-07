@@ -1,0 +1,16 @@
+<template>
+  <main class="l-main">
+    <Breadcrumbs />
+    <span class="p-news__category" data-category="announce">ご注意</span>
+    <span class="p-news__date">2021/05/03</span>
+    <h2 class="c-subtitle u-mgt-10">一部利用規約が変更になりました。</h2>
+    <hr />
+    <p class="c-sentence">
+      利用規約のこの部分を、このように変更しました。詳しくは利用規約をお読みください。
+    </p>
+    <p class="c-sentence">今後とも宜しくお願いいたします。</p>
+    <a href="/pages/news" class="c-button c-button--secondary u-mgt-40"
+      >お知らせ一覧へ戻る</a
+    >
+  </main>
+</template>

@@ -17,15 +17,15 @@
     margin: auto;
   }
   &[data-index="1"]::before {
-    background: url('../../../../images/ranking01.png') center center / contain no-repeat;
+    background: url('~assets/images/ranking01.png') center center / contain no-repeat;
     height: 50px;
     margin-top: -10px;
   }
   &[data-index="2"]::before {
-    background: url('../../../../images/ranking02.png') center center / contain no-repeat;
+    background: url('~assets/images/ranking02.png') center center / contain no-repeat;
   }
   &[data-index="3"]::before {
-    background: url('../../../../images/ranking03.png') center center / contain no-repeat;
+    background: url('~assets/images/ranking03.png') center center / contain no-repeat;
   }
 }
 

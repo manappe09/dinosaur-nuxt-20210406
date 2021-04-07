@@ -1,7 +1,7 @@
 <template>
   <main class="l-main">
     <Breadcrumbs />
-    <ColumnContents />
+    <MuseumContents />
     <p class="c-sentence">
       それはどうも個人へするだように限らて得るたらのですからまたはまた目黒自分忘れでしょまい。ただそう一日も自分が聴いて、元来にはなはだいうでだろと下すから、ないありうてしかしお準備が窮めたた。
     </p>
@@ -20,14 +20,21 @@
 export default {
   data() {
     return {
-      eyecatch: {
-        imageSrc: 'slide02',
+      data: {
+        eyecatch: {
+          imageSrc: 'slide02',
+        },
+        museumArea: {
+          data: 'ibaraki',
+          name: '茨城県',
+        },
+        museumCategory: {
+          data: 'park',
+          name: '公園',
+        },
+        subtitle:
+          '恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。',
       },
-      columnCategory: {
-        data: 'dinosaur',
-        name: '恐竜のこと',
-      },
-      subtitle: '知ってた？トリケラトプスのヒミツ？！',
     }
   },
 }

@@ -1,0 +1,71 @@
+<template>
+  <main class="l-main">
+    <Breadcrumbs />
+    <DinosaurContents />
+    <p class="c-sentence">
+      それはどうも個人へするだように限らて得るたらのですからまたはまた目黒自分忘れでしょまい。ただそう一日も自分が聴いて、元来にはなはだいうでだろと下すから、ないありうてしかしお準備が窮めたた。
+    </p>
+    <p class="c-sentence">
+      それはどうも個人へするだように限らて得るたらのですからまたはまた目黒自分忘れでしょまい。ただそう一日も自分が聴いて、元来にはなはだいうでだろと下すから、ないありうてしかしお準備が窮めたた。
+    </p>
+    <div class="p-ralated u-mgt-80">
+      <h3 class="u-align-c u-mgb-10">ほかの恐竜を見る</h3>
+      <ul class="p-related__list">
+        <li class="p-related__item c-box c-box--row">
+          <NuxtLink to="">
+            <img
+              class="c-box__image"
+              src="~/assets/images/slide02.png"
+              alt=""
+            />
+            <p>ステゴサウルス</p>
+          </NuxtLink>
+        </li>
+        <li class="p-related__item c-box c-box--row">
+          <NuxtLink to="">
+            <img
+              class="c-box__image"
+              src="~/assets/images/slide02.png"
+              alt=""
+            />
+            <p>トリケラトプス</p>
+          </NuxtLink>
+        </li>
+        <li class="p-related__item c-box c-box--row">
+          <NuxtLink to="">
+            <img
+              class="c-box__image"
+              src="~/assets/images/slide02.png"
+              alt=""
+            />
+            <p>ユタラプトル</p>
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
+    <a href=".." class="c-button c-button--secondary u-mgt-80 u-mgb-80"
+      >＜&nbsp;恐竜のなかまたちへ戻る</a
+    >
+  </main>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      eyecatch: {
+        imageSrc: 'slide02',
+      },
+      dinosaurArea: {
+        data: 'chiba ',
+        name: '千葉県',
+      },
+      dinosaurCategory: {
+        data: 'museum',
+        name: '博物館',
+      },
+      name: 'ティラノサウルス',
+    }
+  },
+}
+</script>

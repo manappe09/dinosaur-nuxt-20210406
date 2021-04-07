@@ -1,0 +1,18 @@
+<template>
+  <main class="l-main">
+    <Breadcrumbs />
+    <span class="p-news__category" data-category="news">お知らせ</span>
+    <span class="p-news__date">2021/05/01</span>
+    <h2 class="c-subtitle u-mgt-10">追加機能〇〇をリリースしました！</h2>
+    <hr />
+    <p class="c-sentence">
+      ご要望の多かった、マイページから〇〇ができる機能を追加しました！
+    </p>
+    <p class="c-sentence">
+      使い方は簡単、ここからこうするだけです！ご不明点やその他のご要望等ありましたら、お気軽にお問い合わせくださいね。
+    </p>
+    <a href="/pages/news" class="c-button c-button--secondary u-mgt-40"
+      >お知らせ一覧へ戻る</a
+    >
+  </main>
+</template>

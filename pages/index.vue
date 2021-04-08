@@ -317,3 +317,7 @@
     <!-- /コラム -->
   </main>
 </template>
+
+<script>
+export default {}
+</script>

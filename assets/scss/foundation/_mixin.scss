@@ -28,6 +28,7 @@
 // button reset
 // -----------------------------------------------------------------
 @mixin buttonReset($border: none) {
+  background: none;
   border: $border;
   appearance: none;
   outline: none;

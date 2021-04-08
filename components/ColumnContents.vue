@@ -2,7 +2,7 @@
   <div>
     <img
       class="p-column__eyecatch"
-      src="/assets/images/slide01.png"
+      src="~/assets/images/slide01.png"
       alt=""
       width="100"
       height="200"

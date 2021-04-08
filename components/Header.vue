@@ -20,11 +20,34 @@
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink id="menu" class="p-header__item" to="" title="メニューを開く">
+        <button
+          id="menu"
+          class="p-header__item"
+          to=""
+          title="メニューを開く"
+          @click="toggleNav"
+        >
           <fa icon="bars" class="fas fa-bars p-header__item__icon" />
           <h3 class="p-header__item__name">メニュー</h3>
-        </NuxtLink>
+        </button>
       </li>
     </ul>
   </header>
 </template>
+
+<script>
+export default {
+  props: {
+    toggleNavStatus: {
+      type: String,
+      requierd: false,
+    },
+  },
+  methods: {
+    toggleNav(e) {
+      e.preventDefault()
+      this.$emit('toggle-nav')
+    },
+  },
+}
+</script>

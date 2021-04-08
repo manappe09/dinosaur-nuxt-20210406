@@ -41,6 +41,13 @@
     </div>
     <ul class="p-dinosaur__list">
       <DinosaurBox />
+      <DinosaurBox />
+      <DinosaurBox />
+      <DinosaurBox />
+      <DinosaurBox />
+      <DinosaurBox />
+      <DinosaurBox />
+      <DinosaurBox />
     </ul>
   </main>
 </template>

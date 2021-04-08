@@ -3,9 +3,7 @@
     <Breadcrumbs />
     <h2 class="c-title c-title--accent u-align-c">博物館・公園一覧</h2>
     <ul class="p-museum__list">
-      {/*
-      <MuseumBox />
-      */}
+      <!-- <MuseumBox /> -->
       <li>
         <NuxtLink to="/museum/1" class="c-box c-box--row">
           <img

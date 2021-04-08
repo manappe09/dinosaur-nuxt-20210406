@@ -29,7 +29,6 @@
 .p-header__items {
   display: flex;
   flex-wrap: nowrap;
-  color: #fff;
   list-style: none;
 }
 .p-header__item {
@@ -38,6 +37,17 @@
   flex-direction: column;
   width: 56px;
   height: 70px;
+  color: #fff;
+  &:visited {
+    color: #fff;
+  }
+}
+button.p-header__item {
+  @include buttonReset;
+  &:hover {
+    opacity: .7;
+    cursor: pointer;
+  }
 }
 .p-header__item__icon {
   font-size: 1.9rem;

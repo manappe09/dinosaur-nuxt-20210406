@@ -6,7 +6,7 @@
       <li class="p-news__item c-listitem">
         <span class="p-news__date">2021/05/03</span>
         <span class="p-news__category" data-category="announce">ご注意</span>
-        <NuxtLink to="/pages/news/4"
+        <NuxtLink to="/news/4"
           ><span class="p-news__link"
             >一部利用規約が変更になりました。</span
           ></NuxtLink
@@ -15,7 +15,7 @@
       <li class="p-news__item c-listitem">
         <span class="p-news__date">2021/05/01</span>
         <span class="p-news__category" data-category="news">お知らせ</span>
-        <NuxtLink to="/pages/news/3"
+        <NuxtLink to="/news/3"
           ><span class="p-news__link"
             >追加機能〇〇をリリースしました！</span
           ></NuxtLink
@@ -24,7 +24,7 @@
       <li class="p-news__item c-listitem">
         <span class="p-news__date">2021/03/01</span>
         <span class="p-news__category" data-category="news">お知らせ</span>
-        <NuxtLink to="/pages/news/2"
+        <NuxtLink to="/news/2"
           ><span class="p-news__link"
             >新しい公園を追加しました！</span
           ></NuxtLink
@@ -33,7 +33,7 @@
       <li class="p-news__item c-listitem">
         <span class="p-news__date">2021/03/01</span>
         <span class="p-news__category" data-category="news">お知らせ</span>
-        <NuxtLink to="/pages/news/1"
+        <NuxtLink to="/news/1"
           ><span class="p-news__link"
             >恐竜ずかんのWEBサイトが公開されました！</span
           ></NuxtLink

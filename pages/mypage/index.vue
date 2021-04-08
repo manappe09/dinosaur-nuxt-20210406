@@ -7,7 +7,7 @@
     <div class="p-mypage__list__wrapper">
       <ul class="p-mypage__list">
         <li class="p-mypage__item">
-          <a href="/pages/dinosaur/t-rex" class="c-box c-box--column">
+          <NuxtLink to="/dinosaur/t-rex" class="c-box c-box--column">
             <img
               class="c-box__image c-box__image--column"
               src="~/assets/images/slide02.png"
@@ -21,10 +21,10 @@
               >
               <p>トリケラトプス</p>
             </div>
-          </a>
+          </NuxtLink>
         </li>
         <li class="p-mypage__item">
-          <a href="/pages/dinosaur/t-rex" class="c-box c-box--column">
+          <NuxtLink to="/dinosaur/t-rex" class="c-box c-box--column">
             <img
               class="c-box__image c-box__image--column"
               src="~/assets/images/slide02.png"
@@ -38,10 +38,10 @@
               >
               <p>トリケラトプス</p>
             </div>
-          </a>
+          </NuxtLink>
         </li>
         <li class="p-mypage__item">
-          <a href="/pages/dinosaur/t-rex" class="c-box c-box--column">
+          <NuxtLink to="/dinosaur/t-rex" class="c-box c-box--column">
             <img
               class="c-box__image c-box__image--column"
               src="~/assets/images/slide02.png"
@@ -55,7 +55,7 @@
               >
               <p>トリケラトプス</p>
             </div>
-          </a>
+          </NuxtLink>
         </li>
       </ul>
     </div>
@@ -63,7 +63,7 @@
       <h3 class="c-subtitle">お気に入りした博物館・公園</h3>
       <ul class="p-mypage__list">
         <li class="p-mypage__item">
-          <a href="/pages/dinosaur/t-rex" class="c-box c-box--column">
+          <NuxtLink to="/dinosaur/t-rex" class="c-box c-box--column">
             <img
               class="c-box__image c-box__image--column"
               src="~/assets/images/slide02.png"
@@ -77,10 +77,10 @@
               >
               <p>トリケラトプス</p>
             </div>
-          </a>
+          </NuxtLink>
         </li>
         <li class="p-mypage__item">
-          <a href="/pages/dinosaur/t-rex" class="c-box c-box--column">
+          <NuxtLink to="/dinosaur/t-rex" class="c-box c-box--column">
             <img
               class="c-box__image c-box__image--column"
               src="~/assets/images/slide02.png"
@@ -94,10 +94,10 @@
               >
               <p>トリケラトプス</p>
             </div>
-          </a>
+          </NuxtLink>
         </li>
         <li class="p-mypage__item">
-          <a href="/pages/dinosaur/t-rex" class="c-box c-box--column">
+          <NuxtLink to="/dinosaur/t-rex" class="c-box c-box--column">
             <img
               class="c-box__image c-box__image--column"
               src="~/assets/images/slide02.png"
@@ -111,12 +111,14 @@
               >
               <p>トリケラトプス</p>
             </div>
-          </a>
+          </NuxtLink>
         </li>
       </ul>
     </div>
     <h3 class="c-subtitle u-mgt-80 u-mgb-10">マイページメニュー</h3>
-    <a href="" class="c-listitem c-listitem--next">設定を変更する</a>
-    <a href="" class="c-listitem c-listitem--next">ログアウト</a>
+    <NuxtLink to="" class="c-listitem c-listitem--next"
+      >設定を変更する</NuxtLink
+    >
+    <NuxtLink to="" class="c-listitem c-listitem--next">ログアウト</NuxtLink>
   </main>
 </template>

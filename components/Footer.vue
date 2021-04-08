@@ -4,23 +4,27 @@
       <p class="p-footer__subtitle">ヘルプ</p>
       <ul class="p-footer__list">
         <li class="p-footer__item">
-          <a href="/pages/dinosaur">恐竜をさがす</a>
+          <NuxtLink to="/dinosaur">恐竜をさがす</NuxtLink>
         </li>
-        <li class="p-footer__item"><a href="/pages/guide">ご利用ガイド</a></li>
-        <li class="p-footer__item"><a href="/pages/faq">よくある質問</a></li>
+        <li class="p-footer__item">
+          <NuxtLink to="/guide">ご利用ガイド</NuxtLink>
+        </li>
+        <li class="p-footer__item">
+          <NuxtLink to="/faq">よくある質問</NuxtLink>
+        </li>
       </ul>
     </div>
     <div class="p-footer__block">
       <p class="p-footer__subtitle">サイトについて</p>
       <ul class="p-footer__list">
         <li class="p-footer__item">
-          <a href="/pages/common/agreement">利用規約</a>
+          <NuxtLink to="/common/agreement">利用規約</NuxtLink>
         </li>
         <li class="p-footer__item">
-          <a href="/pages/common/privacy">プライバシーポリシー</a>
+          <NuxtLink to="/common/privacy">プライバシーポリシー</NuxtLink>
         </li>
         <li class="p-footer__item">
-          <a href="/pages/common/contact">お問い合わせ</a>
+          <NuxtLink to="/common/contact">お問い合わせ</NuxtLink>
         </li>
       </ul>
     </div>

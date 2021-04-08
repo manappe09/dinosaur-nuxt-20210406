@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a class="c-box c-box--row">
+    <NuxtLink to="/column/1" class="c-box c-box--row">
       <img
         class="c-box__image c-box__image--row"
         src="~/assets/images/slide02.png"
@@ -16,6 +16,6 @@
           それはどうも個人へするだように限らて得るたらのですからまたはまた目黒自分忘れでしょまい。ただそう一日も自分が聴いて、元来にはなはだいうでだろと下すから、ないありうてしかしお準備が窮めたた。
         </p>
       </div>
-    </a>
+    </NuxtLink>
   </li>
 </template>

@@ -11,8 +11,8 @@
     <p class="c-sentence">
       どの公園も運営者一押しの素敵な公園なので、ぜひ一度訪れてみてくださいね。
     </p>
-    <a href="/pages/news" class="c-button c-button--secondary u-mgt-40"
-      >お知らせ一覧へ戻る</a
+    <NuxtLink to="/news" class="c-button c-button--secondary u-mgt-40"
+      >お知らせ一覧へ戻る</NuxtLink
     >
   </main>
 </template>

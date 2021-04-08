@@ -8,8 +8,8 @@
     <p class="c-sentence">
       当WEBサイトがついに公開！お楽しみコンテンツや機能も盛り沢山なので、ぜひ遊んでいってくださいね。
     </p>
-    <a href="/pages/news" class="c-button c-button--secondary u-mgt-40"
-      >お知らせ一覧へ戻る</a
+    <NuxtLink to="/news" class="c-button c-button--secondary u-mgt-40"
+      >お知らせ一覧へ戻る</NuxtLink
     >
   </main>
 </template>

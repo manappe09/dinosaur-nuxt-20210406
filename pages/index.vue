@@ -1,7 +1,8 @@
 <template>
   <main class="l-main">
     <!-- スライダー -->
-    <SwiperTop />
+    <!-- TODO: あとでいれる -->
+    <!-- <SwiperTop /> -->
     <!-- /スライダー -->
     <!-- 最近のお知らせ -->
     <section class="p-newstop u-mgt-40 u-mgb-80">

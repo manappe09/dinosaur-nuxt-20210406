@@ -11,8 +11,8 @@
     <p class="c-sentence">
       使い方は簡単、ここからこうするだけです！ご不明点やその他のご要望等ありましたら、お気軽にお問い合わせくださいね。
     </p>
-    <a href="/pages/news" class="c-button c-button--secondary u-mgt-40"
-      >お知らせ一覧へ戻る</a
+    <NuxtLink to="/news" class="c-button c-button--secondary u-mgt-40"
+      >お知らせ一覧へ戻る</NuxtLink
     >
   </main>
 </template>

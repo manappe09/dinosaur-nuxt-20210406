@@ -4,33 +4,33 @@
     <h2 class="c-title c-title--accent u-align-c">ご利用ガイド</h2>
     <ul class="p-guide">
       <li class="p-guide__item c-listitem c-listitem--next">
-        <a href="/pages/guide/login"
-          ><span class="p-guide__link">ログインの仕方</span></a
+        <NuxtLink to="/guide/login"
+          ><span class="p-guide__link">ログインの仕方</span></NuxtLink
         >
       </li>
       <li class="p-guide__item c-listitem c-listitem--next">
-        <a href="/pages/guide/mypage"
-          ><span class="p-guide__link">マイページについて</span></a
+        <NuxtLink to="/guide/mypage"
+          ><span class="p-guide__link">マイページについて</span></NuxtLink
         >
       </li>
       <li class="p-guide__item c-listitem c-listitem--next">
-        <a href="/pages/guide/register"
-          ><span class="p-guide__link">登録方法</span></a
+        <NuxtLink to="/guide/register"
+          ><span class="p-guide__link">登録方法</span></NuxtLink
         >
       </li>
       <li class="p-guide__item c-listitem c-listitem--next">
-        <a href="/pages/guide/website"
-          ><span class="p-guide__link">このサイトについて</span></a
+        <NuxtLink to="/guide/website"
+          ><span class="p-guide__link">このサイトについて</span></NuxtLink
         >
       </li>
       <li class="p-guide__item c-listitem c-listitem--next">
-        <a href="/pages/guide/sequrity"
-          ><span class="p-guide__link">セキュリティについて</span></a
+        <NuxtLink to="/guide/sequrity"
+          ><span class="p-guide__link">セキュリティについて</span></NuxtLink
         >
       </li>
       <li class="p-guide__item c-listitem c-listitem--next">
-        <a href="/pages/guide/mailmagazine"
-          ><span class="p-guide__link">メルマガについて</span></a
+        <NuxtLink to="/guide/mailmagazine"
+          ><span class="p-guide__link">メルマガについて</span></NuxtLink
         >
       </li>
     </ul>

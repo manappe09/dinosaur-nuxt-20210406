@@ -43,8 +43,10 @@
         </li>
       </ul>
     </div>
-    <a href=".." class="c-button c-button--secondary u-mgt-80 u-mgb-80"
-      >＜&nbsp;恐竜のなかまたちへ戻る</a
+    <NuxtLink
+      to="/dinosaur"
+      class="c-button c-button--secondary u-mgt-80 u-mgb-80"
+      >＜&nbsp;恐竜のなかまたちへ戻る</NuxtLink
     >
   </main>
 </template>

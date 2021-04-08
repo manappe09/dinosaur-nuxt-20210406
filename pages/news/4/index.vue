@@ -9,8 +9,8 @@
       利用規約のこの部分を、このように変更しました。詳しくは利用規約をお読みください。
     </p>
     <p class="c-sentence">今後とも宜しくお願いいたします。</p>
-    <a href="/pages/news" class="c-button c-button--secondary u-mgt-40"
-      >お知らせ一覧へ戻る</a
+    <NuxtLink to="/news" class="c-button c-button--secondary u-mgt-40"
+      >お知らせ一覧へ戻る</NuxtLink
     >
   </main>
 </template>

@@ -57,10 +57,8 @@
   margin: auto;
   padding: 0 2rem;
 }
-.c-filter__submit {
+.c-filter__window__hide {
   @include buttonReset;
-}
-.c-filter__window__cancel {
   display: block;
   text-align: center;
   font-size: .8em;

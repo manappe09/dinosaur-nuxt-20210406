@@ -5,7 +5,6 @@
  * Button --base
  */
  .c-button {
-   @include buttonReset;
    display: block;
    width: 100%;
    margin: auto;
@@ -26,10 +25,11 @@
    * Button --primary
    */
   .c-button--primary {
+   @include buttonReset($base-100-c);
     max-width: 350px;
     height: 50px;
     line-height: 50px;
-    background-color: $base-100-c;
+    // background-color: $base-100-c;
     border-radius: 30px;
     box-shadow: 0 5px 0 #FBE6B9;
   }
@@ -38,10 +38,11 @@
   * Button --secondary
   */  
 .c-button--secondary {
+  @include buttonReset($accent-100-c);
   max-width: 250px;
   height: 40px;
   line-height: 40px;
-  background-color: $accent-100-c;
+  // background-color: $accent-100-c;
   border-radius: 4px;
   box-shadow: 0 5px 0 $accent-80-c;
   font-size: .9rem;
@@ -51,10 +52,11 @@
   * Button --third
   */  
 .c-button--third {
+  @include buttonReset($main-60-c);
   max-width: 200px;
   height: 38px;
   line-height: 38px;
-  background-color: $main-60-c;
+  // background-color: $main-60-c;
   border-radius: 4px;
   font-size: .9rem;
 }

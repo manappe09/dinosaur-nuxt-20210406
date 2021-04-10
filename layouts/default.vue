@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Header @toggle-nav="toggleNavStatus = !toggleNavStatus" />
+    <Header @toggle-nav="navClickedTrigger = !navClickedTrigger" />
     <Searchbox />
-    <Nav :nav-state="toggleNavStatus" />
+    <Nav :nav-state="navClickedTrigger" />
     <Nuxt />
     <Footer />
   </div>
@@ -12,7 +12,7 @@
 export default {
   data() {
     return {
-      toggleNavStatus: '',
+      navClickedTrigger: false,
     }
   },
 }

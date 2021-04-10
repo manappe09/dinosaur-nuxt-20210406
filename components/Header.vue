@@ -37,15 +37,8 @@
 
 <script>
 export default {
-  props: {
-    toggleNavStatus: {
-      type: String,
-      requierd: false,
-    },
-  },
   methods: {
-    toggleNav(e) {
-      e.preventDefault()
+    toggleNav() {
       this.$emit('toggle-nav')
     },
   },

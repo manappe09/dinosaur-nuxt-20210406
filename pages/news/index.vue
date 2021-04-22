@@ -9,9 +9,11 @@
         class="p-news__item c-listitem"
       >
         <span class="p-news__date">{{ content.createdAt }}</span>
-        <span class="p-news__category" :data-category="dataCategory(content)">{{
-          content.category[0]
-        }}</span>
+        <span
+          class="p-news__category"
+          :data-category="setDataCategory(content)"
+          >{{ content.category[0] }}</span
+        >
         <NuxtLink :to="`/news/${content.id}`"
           ><span class="p-news__link">{{ content.title }}</span></NuxtLink
         >
@@ -31,7 +33,7 @@ export default {
     console.log(this.contents)
   },
   methods: {
-    dataCategory(content) {
+    setDataCategory(content) {
       let category
       // この辺はデータの構造を見ながら
       switch (content.category[0]) {

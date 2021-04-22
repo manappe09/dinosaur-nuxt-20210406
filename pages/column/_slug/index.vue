@@ -17,9 +17,9 @@
     </div>
     <div v-html="text"></div>
     <NuxtLink
-      to="/museum"
+      to="/column"
       class="c-button c-button--secondary u-mgt-80 u-mgb-80"
-      >＜&nbsp;博物館・公園一覧へ戻る</NuxtLink
+      >＜&nbsp;コラム一覧へ戻る</NuxtLink
     >
   </main>
 </template>

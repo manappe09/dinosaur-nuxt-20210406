@@ -55,7 +55,10 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://dinosaur-nuxt-20210406.microcms.io/api/v1/',
+    headers: { 'X-API-KEY': 'fb44c3f1-de38-4379-808e-34002dba69b4' },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

@@ -3,67 +3,47 @@
     <Breadcrumbs />
     <h2 class="c-title c-title--accent u-align-c">お知らせ一覧</h2>
     <ul class="p-news">
-      <li class="p-news__item c-listitem">
-        <span class="p-news__date">2021/05/03</span>
-        <span class="p-news__category" data-category="announce">ご注意</span>
-        <NuxtLink to="/news/4"
-          ><span class="p-news__link"
-            >一部利用規約が変更になりました。</span
-          ></NuxtLink
-        >
-      </li>
-      <li class="p-news__item c-listitem">
-        <span class="p-news__date">2021/05/01</span>
-        <span class="p-news__category" data-category="news">お知らせ</span>
-        <NuxtLink to="/news/3"
-          ><span class="p-news__link"
-            >追加機能〇〇をリリースしました！</span
-          ></NuxtLink
-        >
-      </li>
-      <li class="p-news__item c-listitem">
-        <span class="p-news__date">2021/03/01</span>
-        <span class="p-news__category" data-category="news">お知らせ</span>
-        <NuxtLink to="/news/2"
-          ><span class="p-news__link"
-            >新しい公園を追加しました！</span
-          ></NuxtLink
-        >
-      </li>
-      <li class="p-news__item c-listitem">
-        <span class="p-news__date">2021/03/01</span>
-        <span class="p-news__category" data-category="news">お知らせ</span>
-        <NuxtLink to="/news/1"
-          ><span class="p-news__link"
-            >恐竜ずかんのWEBサイトが公開されました！</span
-          ></NuxtLink
-        >
-      </li>
-      <li class="p-news__item c-listitem">
-        <span class="p-news__date">2021/03/01</span>
-        <span class="p-news__category" data-category="news">お知らせデモ</span>
-        <span class="p-news__link"
-          >全時代の恐竜が大迫力で展示されています。1日遊べる博物館です。</span
-        >
-      </li>
-      <li class="p-news__item c-listitem">
-        <span class="p-news__date">2021/03/01</span>
-        <span class="p-news__category" data-category="announce"
-          >お知らせデモ</span
-        >
-        <span class="p-news__link"
-          >全時代の恐竜が大迫力で展示されています。1日遊べる博物館です。</span
-        >
-      </li>
-      <li class="p-news__item c-listitem">
-        <span class="p-news__date">2021/03/01</span>
-        <span class="p-news__category" data-category="announce"
-          >お知らせデモ</span
-        >
-        <span class="p-news__link"
-          >全時代の恐竜が大迫力で展示されています。1日遊べる博物館です。</span
+      <li
+        v-for="content in contents"
+        :key="content.id"
+        class="p-news__item c-listitem"
+      >
+        <span class="p-news__date">{{ content.createdAt }}</span>
+        <span class="p-news__category" :data-category="dataCategory(content)">{{
+          content.category[0]
+        }}</span>
+        <NuxtLink :to="`/news/${content.id}`"
+          ><span class="p-news__link">{{ content.title }}</span></NuxtLink
         >
       </li>
     </ul>
   </main>
 </template>
+
+<script>
+export default {
+  async asyncData({ $axios }) {
+    const data = await $axios.$get('news')
+    return data
+  },
+  mounted() {
+    // APIで取得したデータがdataとマージされ下記に格納される
+    console.log(this.contents)
+  },
+  methods: {
+    dataCategory(content) {
+      let category
+      // この辺はデータの構造を見ながら
+      switch (content.category[0]) {
+        case 'お知らせ':
+          category = 'news'
+          break
+        case 'ご注意':
+          category = 'announce'
+          break
+      }
+      return category
+    },
+  },
+}
+</script>

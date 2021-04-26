@@ -9,8 +9,8 @@
         width="100"
         height="200"
       />
-      <span class="p-column__category" :data-category="`category`">{{
-        setDataCategory(category)
+      <span class="p-column__category" :data-category="category[0]">{{
+        $setColumnCategory(category[0])
       }}</span>
       <h2 class="c-subtitle u-mgt-10">{{ title }}</h2>
       <hr />
@@ -33,20 +33,6 @@ export default {
     } catch (e) {
       error(e)
     }
-  },
-  methods: {
-    setDataCategory(category) {
-      let categoryName
-      switch (category) {
-        case 'お知らせ':
-          category = 'news'
-          break
-        case 'ご注意':
-          category = 'announce'
-          break
-      }
-      return categoryName
-    },
   },
 }
 </script>

@@ -11,7 +11,7 @@
       />
       <span class="p-museum__area" :data-area="area">茨城県</span>
       <span class="p-museum__category" :data-category="category[0]">公園</span>
-      <h2 class="c-subtitle u-mgt-10">さんかく公園</h2>
+      <h2 class="c-subtitle u-mgt-10">{{ title }}</h2>
       <hr />
     </div>
     <div v-html="text"></div>

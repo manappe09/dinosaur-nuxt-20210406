@@ -17,7 +17,7 @@
             <span
               class="p-column__category"
               :data-category="content.category[0]"
-              >{{ setDataCategory(content.category[0]) }}</span
+              >{{ $setColumnCategory(content.category[0]) }}</span
             >
           </div>
         </NuxtLink>
@@ -35,26 +35,6 @@ export default {
     } catch (e) {
       error(e)
     }
-  },
-  methods: {
-    setDataCategory(categoryName) {
-      let category
-      switch (categoryName) {
-        case 'dinosaur':
-          category = '恐竜のこと'
-          break
-        case 'history':
-          category = '恐竜の歴史'
-          break
-        case 'event':
-          category = 'イベント情報'
-          break
-        case 'tips':
-          category = '豆知識'
-          break
-      }
-      return category
-    },
   },
 }
 </script>

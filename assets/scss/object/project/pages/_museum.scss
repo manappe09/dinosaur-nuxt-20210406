@@ -14,8 +14,14 @@
 .p-museum__area {
   @include boxLabel;
   border-radius: 20px;
-  &[data-area="ibaraki"] {
-    background-color: $museum-ibaraki-c;
+  &[data-area="ibaraki"], &[data-area="chiba"], &[data-area="tokyo"], &[data-area="tochigi"] {
+    background-color: $area-kanto-c;
+  }
+  &[data-area="kyoto"] {
+    background-color: $area-kansai-c;
+  }
+  &[data-area="ishikawa"] {
+    background-color: $area-chubu-c;
   }
 }
 .p-museum__category {
@@ -23,6 +29,9 @@
   border-radius: 20px;
   &[data-category="park"] {
     background-color: $museum-park-c;
+  }
+  &[data-category="museum"] {
+    background-color: $museum-museum-c;
   }
 }
 .p-museum__eyecatch {

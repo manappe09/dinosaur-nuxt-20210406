@@ -14,18 +14,17 @@
 .p-column__category {
   @include boxLabel;
   border-radius: 20px;
-  color: #fff;
   &[data-category="dinosaur"] {
     background-color: $column-dinosaur-c;
   }
-  &[data-category="knowledge"] {
-    background-color: $column-knowledge-c;
+  &[data-category="tips"] {
+    background-color: $column-tips-c;
   }
   &[data-category="history"] {
     background-color: $column-history-c;
   }
-  &[data-category="expert"] {
-    background-color: $column-expert-c;
+  &[data-category="event"] {
+    background-color: $column-event-c;
   }
 }
 .p-column__eyecatch {

@@ -1,13 +1,26 @@
 <template>
   <main class="l-main">
     <Breadcrumbs />
-    <DinosaurContents />
-    <p class="c-sentence">
-      それはどうも個人へするだように限らて得るたらのですからまたはまた目黒自分忘れでしょまい。ただそう一日も自分が聴いて、元来にはなはだいうでだろと下すから、ないありうてしかしお準備が窮めたた。
-    </p>
-    <p class="c-sentence">
-      それはどうも個人へするだように限らて得るたらのですからまたはまた目黒自分忘れでしょまい。ただそう一日も自分が聴いて、元来にはなはだいうでだろと下すから、ないありうてしかしお準備が窮めたた。
-    </p>
+    <div>
+      <div class="p-dinosaur__slide">
+        <img
+          class="p-dinosaur__eyecatch"
+          :src="image.url"
+          alt=""
+          width="100"
+          height="200"
+        />
+        <div class="p-dinosaur__accent" role="none"></div>
+      </div>
+      <h2 class="c-subtitle">{{ name }}</h2>
+      <ul class="c-profile">
+        <li class="c-profile__item">ジュラ紀</li>
+        <li class="c-profile__item">竜盤目</li>
+        <!-- <li class="c-profile__item">{{ $setDinosaurAge(age[0]) }}</li>
+        <li class="c-profile__item">{{ $setDinosaurCategory(category[0]) }}</li> -->
+      </ul>
+    </div>
+    <div v-html="text"></div>
     <div class="p-ralated u-mgt-80">
       <h3 class="u-align-c u-mgb-10">ほかの恐竜を見る</h3>
       <ul class="p-related__list">
@@ -53,6 +66,14 @@
 
 <script>
 export default {
+  async asyncData({ $axios, params, error }) {
+    try {
+      const data = await $axios.$get(`dinosaur/${params.slug}`)
+      return data
+    } catch (e) {
+      error(e)
+    }
+  },
   data() {
     return {
       eyecatch: {

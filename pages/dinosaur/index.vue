@@ -21,20 +21,48 @@
       </div>
     </div>
     <ul class="p-dinosaur__list">
-      <DinosaurBox />
-      <DinosaurBox />
-      <DinosaurBox />
-      <DinosaurBox />
-      <DinosaurBox />
-      <DinosaurBox />
-      <DinosaurBox />
-      <DinosaurBox />
+      <li
+        v-for="content in contents"
+        :key="content.id"
+        class="c-box c-box--column"
+      >
+        <NuxtLink :to="`/dinosaur/${content.id}`">
+          <img
+            class="c-box__image c-box__image--column"
+            :src="content.image.url"
+            alt=""
+            width="100"
+            height="100"
+          />
+          <div class="c-box__text c-box__text--column">
+            <span
+              class="p-dinosaur__category"
+              :data-category="content.age[0]"
+              >{{ $setDinosaurAge(content.age[0]) }}</span
+            >
+            <span
+              class="p-dinosaur__category"
+              :data-category="content.category[0]"
+              >{{ $setDinosaurCategory(content.category[0]) }}</span
+            >
+            <p>{{ content.name }}</p>
+          </div>
+        </NuxtLink>
+      </li>
     </ul>
   </main>
 </template>
 
 <script>
 export default {
+  async asyncData({ $axios, error }) {
+    try {
+      const data = await $axios.$get('dinosaur')
+      return data
+    } catch (e) {
+      error(e)
+    }
+  },
   data() {
     return {
       data: [

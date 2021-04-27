@@ -7,22 +7,16 @@
     <!-- 最近のお知らせ -->
     <section class="p-newstop u-mgt-40 u-mgb-80">
       <ul class="p-newstop__list">
-        <li class="p-newstop__item">
+        <li
+          v-for="news in setSlicedArray(news, 3)"
+          :key="news.id"
+          class="p-newstop__item"
+        >
           <NuxtLink to="/news/4">
-            <span class="p-news__category" data-category="announce">ご注意</span
-            >一部利用規約が変更になりました。
-          </NuxtLink>
-        </li>
-        <li class="p-newstop__item">
-          <NuxtLink to="/news/3">
-            <span class="p-news__category" data-category="news">お知らせ</span
-            >追加機能〇〇をリリースしました！
-          </NuxtLink>
-        </li>
-        <li class="p-newstop__item">
-          <NuxtLink to="/news/2">
-            <span class="p-news__category" data-category="news">お知らせ</span
-            >新しい公園を追加しました！
+            <span class="p-news__category" :data-category="news.category[0]">{{
+              $setNewsCategory(news.category[0])
+            }}</span
+            >{{ news.title }}
           </NuxtLink>
         </li>
       </ul>
@@ -54,28 +48,14 @@
         恐竜人気ランキング
       </h2>
       <ul class="p-rankingtop__list">
-        <li class="p-rankingtop__item" data-index="1">
-          <NuxtLink to="/dinosaur/t-rex"
-            ><img
-              class="p-rankingtop__image"
-              src="~/assets/images/slide01.png"
-              alt=""
-          /></NuxtLink>
-        </li>
-        <li class="p-rankingtop__item" data-index="2">
-          <NuxtLink to="/dinosaur/t-rex"
-            ><img
-              class="p-rankingtop__image"
-              src="~/assets/images/slide01.png"
-              alt=""
-          /></NuxtLink>
-        </li>
-        <li class="p-rankingtop__item" data-index="3">
-          <NuxtLink to="/dinosaur/t-rex"
-            ><img
-              class="p-rankingtop__image"
-              src="~/assets/images/slide01.png"
-              alt=""
+        <li
+          v-for="(dinosaur, index) in setSlicedArray(dinosaurs, 3)"
+          :key="dinosaur.id"
+          class="p-rankingtop__item"
+          :data-index="index + 1"
+        >
+          <NuxtLink :to="`/dinosaur/${dinosaur.id}`"
+            ><img class="p-rankingtop__image" :src="dinosaur.image.url" alt=""
           /></NuxtLink>
         </li>
       </ul>
@@ -87,102 +67,30 @@
         恐竜に会いにいく
       </h2>
       <ul class="p-museumtop__list">
-        <div class="c-box c-box--column">
+        <li
+          v-for="museum in setSlicedArray(museums, 6)"
+          :key="museum.id"
+          class="c-box c-box--column"
+        >
           <img
             class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
+            :src="museum.eyecatch.url"
             alt=""
             width="100"
             height="100"
           />
           <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
+            <span class="p-museum__area" :data-area="museum.area[0]">{{
+              $setArea(museum.area[0])
+            }}</span>
+            <span
+              class="p-museum__category"
+              :data-category="museum.category[0]"
+              >{{ $setMuseumCategory(museum.category[0]) }}</span
+            >
+            <div v-html="museum.text"></div>
           </div>
-        </div>
-        <div class="c-box c-box--column">
-          <img
-            class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
-          </div>
-        </div>
-        <div class="c-box c-box--column">
-          <img
-            class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
-          </div>
-        </div>
-        <div class="c-box c-box--column">
-          <img
-            class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
-          </div>
-        </div>
-        <div class="c-box c-box--column">
-          <img
-            class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
-          </div>
-        </div>
-        <div class="c-box c-box--column">
-          <img
-            class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
-          </div>
-        </div>
+        </li>
       </ul>
       <NuxtLink to="/museum" class="c-button c-button--primary"
         >博物館・公園一覧へ</NuxtLink
@@ -213,102 +121,28 @@
         コラムを読む
       </h2>
       <ul class="p-columntop__list">
-        <div class="c-box c-box--column">
+        <li
+          v-for="column in setSlicedArray(columns, 6)"
+          :key="column.id"
+          class="c-box c-box--column"
+        >
           <img
             class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
+            :src="column.eyecatch.url"
             alt=""
             width="100"
             height="100"
           />
           <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
+            <span
+              class="p-museum__category"
+              :data-category="column.category[0]"
+              >{{ $setColumnCategory(column.category[0]) }}</span
+            >
+            <p>{{ column.title }}</p>
+            <div v-html="column.text"></div>
           </div>
-        </div>
-        <div class="c-box c-box--column">
-          <img
-            class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
-          </div>
-        </div>
-        <div class="c-box c-box--column">
-          <img
-            class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
-          </div>
-        </div>
-        <div class="c-box c-box--column">
-          <img
-            class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
-          </div>
-        </div>
-        <div class="c-box c-box--column">
-          <img
-            class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
-          </div>
-        </div>
-        <div class="c-box c-box--column">
-          <img
-            class="c-box__image c-box__image--column"
-            src="~/assets/images/slide02.png"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" data-area="ibaraki">茨城県</span>
-            <span class="p-museum__category" data-category="park">公園</span>
-            <p>
-              恐竜の大きな看板がお出迎え。休日は家族で賑わう広々とした公園です。
-            </p>
-          </div>
-        </div>
+        </li>
       </ul>
       <NuxtLink to="/column" class="c-button c-button--primary"
         >コラムをもっと読む</NuxtLink
@@ -319,5 +153,29 @@
 </template>
 
 <script>
-export default {}
+export default {
+  async asyncData({ $axios, error }) {
+    try {
+      const [news, dinosaur, column, museum] = await Promise.all([
+        $axios.$get('news'),
+        $axios.$get('dinosaur'),
+        $axios.$get('column'),
+        $axios.$get('museum'),
+      ])
+      return {
+        news: news.contents,
+        dinosaurs: dinosaur.contents,
+        columns: column.contents,
+        museums: museum.contents,
+      }
+    } catch (e) {
+      error(e)
+    }
+  },
+  methods: {
+    setSlicedArray(array, quantity) {
+      return array.slice(0, quantity)
+    },
+  },
+}
 </script>

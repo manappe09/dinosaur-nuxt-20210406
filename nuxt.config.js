@@ -27,7 +27,7 @@ export default {
   css: ['~/assets/scss/app.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/convert-data'],
+  plugins: ['~/plugins/convert-data', '~/plugins/convert-date'],
   // plugins: ['~/plugins/vue-awesome-swiper', '~/plugins/convert-data'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

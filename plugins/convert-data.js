@@ -5,11 +5,11 @@ function setNewsCategory(content) {
   let category
   // この辺はデータの構造を見ながら
   switch (content) {
-    case 'お知らせ':
-      category = 'news'
+    case 'news':
+      category = 'お知らせ'
       break
-    case 'ご注意':
-      category = 'announce'
+    case 'announce':
+      category = 'ご注意'
       break
   }
   return category

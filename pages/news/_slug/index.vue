@@ -1,10 +1,10 @@
 <template>
   <main class="l-main">
     <Breadcrumbs />
-    <span class="p-news__category" :data-category="category">{{
-      setDataCategory(category)
+    <span class="p-news__category" :data-category="category[0]">{{
+      $setNewsCategory(category[0])
     }}</span>
-    <span class="p-news__date">{{ createdAt }}</span>
+    <span class="p-news__date">{{ $setDate(createdAt) }}</span>
     <h2 class="c-subtitle u-mgt-10">{{ title }}</h2>
     <hr />
     <p v-html="text01"></p>
@@ -23,20 +23,6 @@ export default {
     } catch (e) {
       error(e)
     }
-  },
-  methods: {
-    setDataCategory(category) {
-      let categoryName
-      switch (category) {
-        case 'news':
-          category = 'お知らせ'
-          break
-        case 'announce':
-          category = 'ご注意'
-          break
-      }
-      return categoryName
-    },
   },
 }
 </script>

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/news/eeyys4ap3w", (function(a,b){return {data:[{id:"eeyys4ap3w",createdAt:a,updatedAt:b,publishedAt:a,revisedAt:b,title:"恐竜ずかんのWebサイトが公開されました！",category:["news"],text01:"\u003Cp\u003E恐竜ずかんのWebサイト(本サイト)が公開されました！\u003Cbr\u003E\u003Cbr\u003Eぜひ遊んでくださいね。\u003C\u002Fp\u003E"}],fetch:{},mutations:[]}}("2021-04-11T19:50:47.905Z","2021-04-19T20:11:04.070Z")));

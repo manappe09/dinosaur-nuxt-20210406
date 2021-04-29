@@ -30,7 +30,7 @@
       </li>
       <li class="p-guide__item c-listitem c-listitem--next">
         <NuxtLink to="/guide/mailmagazine"
-          ><span class="p-guide__link">メルマガについて</span></NuxtLink
+          ><span class="p-guide__link">メールマガジンについて</span></NuxtLink
         >
       </li>
     </ul>

@@ -5,3 +5,9 @@
   list-style: none;
   font-size: .9rem;
 }
+.p-newstop__title {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}

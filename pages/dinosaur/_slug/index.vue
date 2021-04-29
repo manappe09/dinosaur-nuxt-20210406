@@ -14,10 +14,8 @@
       </div>
       <h2 class="c-subtitle">{{ name }}</h2>
       <ul class="c-profile">
-        <li class="c-profile__item">ジュラ紀</li>
-        <li class="c-profile__item">竜盤目</li>
-        <!-- <li class="c-profile__item">{{ $setDinosaurAge(age[0]) }}</li>
-        <li class="c-profile__item">{{ $setDinosaurCategory(category[0]) }}</li> -->
+        <li class="c-profile__item">{{ $setDinosaurAge(age[0]) }}</li>
+        <li class="c-profile__item">{{ $setDinosaurCategory(category[0]) }}</li>
       </ul>
     </div>
     <div v-html="text"></div>

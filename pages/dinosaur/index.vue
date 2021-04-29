@@ -35,11 +35,9 @@
             height="100"
           />
           <div class="c-box__text c-box__text--column">
-            <span
-              class="p-dinosaur__category"
-              :data-category="content.age[0]"
-              >{{ $setDinosaurAge(content.age[0]) }}</span
-            >
+            <span class="p-dinosaur__age" :data-category="content.age[0]">{{
+              $setDinosaurAge(content.age[0])
+            }}</span>
             <span
               class="p-dinosaur__category"
               :data-category="content.category[0]"

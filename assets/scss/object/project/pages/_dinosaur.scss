@@ -12,10 +12,20 @@
   border-radius: 20px;
   color: #fff;
   &[data-category="dragon"] {
-    background-color: #c45719;
+    background-color: $dinosaur-dragon-c
   }
   &[data-category="bird"] {
-    background-color: #0f75b9;
+    background-color: $dinosaur-bird-c
+  }
+}
+.p-dinosaur__age {
+  @extend .p-dinosaur__category;
+  color: #000;
+  &[data-category="Jurassic"] {
+    background-color: $dinosaur-jurassic-c;
+  }
+  &[data-category="Cretaceous"] {
+    background-color: $dinosaur-cretaceous-c;
   }
 }
 .p-dinosaur__eyecatch {

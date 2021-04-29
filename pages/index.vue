@@ -12,7 +12,7 @@
           :key="news.id"
           class="p-newstop__item"
         >
-          <NuxtLink to="/news/4">
+          <NuxtLink to="/news/4" class="p-newstop__title">
             <span class="p-news__category" :data-category="news.category[0]">{{
               $setNewsCategory(news.category[0])
             }}</span
@@ -72,24 +72,27 @@
           :key="museum.id"
           class="c-box c-box--column"
         >
-          <img
-            class="c-box__image c-box__image--column"
-            :src="museum.eyecatch.url"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span class="p-museum__area" :data-area="museum.area[0]">{{
-              $setArea(museum.area[0])
-            }}</span>
-            <span
-              class="p-museum__category"
-              :data-category="museum.category[0]"
-              >{{ $setMuseumCategory(museum.category[0]) }}</span
-            >
-            <div v-html="museum.text"></div>
-          </div>
+          <NuxtLink :to="`/museum/${museum.id}`">
+            <img
+              class="c-box__image c-box__image--column"
+              :src="museum.eyecatch.url"
+              alt=""
+              width="100"
+              height="100"
+            />
+            <div class="c-box__text c-box__text--column">
+              <span class="p-museum__area" :data-area="museum.area">{{
+                $setArea(museum.area)
+              }}</span>
+              <span
+                class="p-museum__category"
+                :data-category="museum.category[0]"
+                >{{ $setMuseumCategory(museum.category[0]) }}</span
+              >
+              <p>{{ museum.title }}</p>
+              <div v-html="museum.text" class="p-museumtop__text"></div>
+            </div>
+          </NuxtLink>
         </li>
       </ul>
       <NuxtLink to="/museum" class="c-button c-button--primary"
@@ -126,22 +129,24 @@
           :key="column.id"
           class="c-box c-box--column"
         >
-          <img
-            class="c-box__image c-box__image--column"
-            :src="column.eyecatch.url"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <div class="c-box__text c-box__text--column">
-            <span
-              class="p-museum__category"
-              :data-category="column.category[0]"
-              >{{ $setColumnCategory(column.category[0]) }}</span
-            >
-            <p>{{ column.title }}</p>
-            <div v-html="column.text"></div>
-          </div>
+          <NuxtLink :to="`/column/${column.id}`">
+            <img
+              class="c-box__image c-box__image--column"
+              :src="column.eyecatch.url"
+              alt=""
+              width="100"
+              height="100"
+            />
+            <div class="c-box__text c-box__text--column">
+              <span
+                class="p-column__category"
+                :data-category="column.category[0]"
+                >{{ $setColumnCategory(column.category[0]) }}</span
+              >
+              <p>{{ column.title }}</p>
+              <div v-html="column.text" class="p-columntop__text"></div>
+            </div>
+          </NuxtLink>
         </li>
       </ul>
       <NuxtLink to="/column" class="c-button c-button--primary"

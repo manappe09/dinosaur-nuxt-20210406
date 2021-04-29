@@ -8,3 +8,17 @@
   display: flex;
   flex-wrap: wrap;
 }
+.p-museumtop__text {
+  position: relative;
+  height: calc(1rem * 1.8 * 3);
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60px;
+    height: calc(1rem * 1.8);
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, .8) 50%, #fff 100%);
+  }
+}

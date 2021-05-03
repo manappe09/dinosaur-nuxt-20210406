@@ -96,10 +96,10 @@ function setDinosaurCategory(content) {
 function setDinosaurAge(content) {
   let category
   switch (content) {
-    case 'Jurassic':
+    case 'jurassic':
       category = 'ジュラ紀'
       break
-    case 'Cretaceous':
+    case 'cretaceous':
       category = '白亜紀'
       break
   }

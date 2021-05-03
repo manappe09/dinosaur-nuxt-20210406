@@ -5,11 +5,40 @@
     :class="{ 'is-open': filteringBoxState }"
   >
     <h3 class="c-filter__index">種類</h3>
-    <input id="bird" type="checkbox" name="category" />
+    <input
+      id="bird"
+      v-model="dinosaurCategory"
+      type="checkbox"
+      name="category"
+      value="bird"
+    />
     <label for="bird">鳥盤目</label>
-    <input id="dragon" type="checkbox" name="category" />
+    <input
+      id="dragon"
+      v-model="dinosaurCategory"
+      type="checkbox"
+      name="category"
+      value="dragon"
+    />
     <label for="dragon">竜盤目</label>
-    <h3 class="c-filter__index">食べ物</h3>
+    <h3 class="c-filter__index">時代</h3>
+    <input
+      id="jurassic"
+      v-model="dinosaurAge"
+      type="checkbox"
+      name="age"
+      value="jurassic"
+    />
+    <label for="jurassic">ジュラ紀</label>
+    <input
+      id="cretaceous"
+      v-model="dinosaurAge"
+      type="checkbox"
+      name="age"
+      value="cretaceous"
+    />
+    <label for="cretaceous">白亜紀</label>
+    <!-- <h3 class="c-filter__index">食べ物</h3>
     <input id="vegetable" type="checkbox" name="category" />
     <label for="vegetable">草食</label>
     <input id="meat" type="checkbox" name="category" />
@@ -17,9 +46,12 @@
     <input id="bug" type="checkbox" name="category" />
     <label for="bug">虫</label>
     <input id="mix" type="checkbox" name="category" />
-    <label for="mix">雑食</label><br />
+    <label for="mix">雑食</label><br /> -->
     <div class="c-filter__window__bottom">
-      <button class="c-filter__submit c-button c-button--third">
+      <button
+        class="c-filter__submit c-button c-button--third"
+        @click="filterContents"
+      >
         この条件で絞り込む
       </button>
       <button
@@ -36,9 +68,22 @@
 <script>
 export default {
   props: ['filteringBoxState'],
+  data() {
+    return {
+      dinosaurCategory: [],
+      dinosaurAge: [],
+    }
+  },
   methods: {
     hideFilteringBox() {
       this.$emit('hide-filtering-box', false)
+    },
+    filterContents() {
+      this.$emit('hide-filtering-box', false)
+      this.$emit('filtered-contents', {
+        dinosaurCategory: this.dinosaurCategory,
+        dinosaurAge: this.dinosaurAge,
+      })
     },
   },
 }

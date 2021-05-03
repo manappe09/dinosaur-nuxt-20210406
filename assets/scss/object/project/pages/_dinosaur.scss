@@ -7,6 +7,12 @@
 .p-dinosaur__list {
   @include boxWrapColumn;
 }
+.p-dinosaur__item {
+  display: none;
+  &.is-show {
+    display: block;
+  }
+}
 .p-dinosaur__category {
   @include boxLabel;
   border-radius: 20px;
@@ -21,10 +27,10 @@
 .p-dinosaur__age {
   @extend .p-dinosaur__category;
   color: #000;
-  &[data-category="Jurassic"] {
+  &[data-category="jurassic"] {
     background-color: $dinosaur-jurassic-c;
   }
-  &[data-category="Cretaceous"] {
+  &[data-category="cretaceous"] {
     background-color: $dinosaur-cretaceous-c;
   }
 }

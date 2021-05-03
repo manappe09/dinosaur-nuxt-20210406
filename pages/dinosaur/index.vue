@@ -12,17 +12,26 @@
       <FilteringBox
         :filtering-box-state="filteringBoxState"
         @hide-filtering-box="filteringBoxState = $event"
-        @filtered-contents="filteringValue = $event"
+        @filtered-contents="filterContents($event)"
       />
-      <div class="c-filter__select__wrapper u-mgt-10 u-mgb-80">
+      <div class="c-filter__select__wrapper u-mgt-10 u-mgb-40">
         <select class="c-filter__select">
           <option value="popular" selected>人気順</option>
           <option value="name">50音順</option>
         </select>
       </div>
-      <button @click="filterContents">ソートする</button>
-      <!-- <p>選択された絞り込み：{{ showFilteringValues(filteringValue) }}</p> -->
+      <div v-if="isFiltered" class="c-filter__selected u-mgb-80">
+        <span class="u-text-s">選択された絞り込み</span>
+        <div id="selectedValue"></div>
+        <button
+          @click="showAllBoxes()"
+          class="c-button c-button--reset u-text-s"
+        >
+          全ての恐竜をならべる▶︎
+        </button>
+      </div>
     </div>
+    <p>{{ noItemMessage }}</p>
     <ul class="p-dinosaur__list">
       <li
         v-for="(content, index) in filteredContents"
@@ -70,6 +79,12 @@ export default {
       filteringBoxState: false,
       filteredContents: [],
       boxShowState: [],
+      noItemMessage: '',
+      selectedValue: {
+        categories: [],
+        ages: [],
+      },
+      isFiltered: false,
     }
   },
   mounted() {
@@ -81,36 +96,79 @@ export default {
       this.filteringBoxState = !this.filteringBoxState
     },
     showAllBoxes() {
+      this.boxShowState = []
+      this.noItemMessage = ''
+      this.isFiltered = false
       for (let i = 0; i < this.contents.length; i++) {
         this.boxShowState.push(true)
       }
     },
-    filterContents() {
-      const selectedCategories = this.filteringValue.dinosaurCategory
-      const selectedAges = this.filteringValue.dinosaurAge
+    filterContents($event) {
+      this.selectedValue.categories = $event.dinosaurCategory
+      this.selectedValue.ages = $event.dinosaurAge
       this.boxShowState = []
+      this.noItemMessage = ''
+      this.isFiltered = true
+      this.setSelectedValues()
       this.contents.forEach((content) => {
-        if (selectedCategories.length > 0 && selectedAges.length > 0) {
+        if (
+          this.selectedValue.categories.length > 0 &&
+          this.selectedValue.ages.length > 0
+        ) {
           if (
-            selectedCategories.includes(content.category[0]) &&
-            selectedAges.includes(content.age[0])
+            this.selectedValue.categories.includes(content.category[0]) &&
+            this.selectedValue.ages.includes(content.age[0])
           ) {
             this.boxShowState.push(true)
           } else {
             this.boxShowState.push(false)
           }
-        } else if (selectedCategories.length > 0 || selectedAges.length > 0) {
+        } else if (
+          this.selectedValue.categories.length > 0 ||
+          this.selectedValue.ages.length > 0
+        ) {
           if (
-            selectedCategories.includes(content.category[0]) ||
-            selectedAges.includes(content.age[0])
+            this.selectedValue.categories.includes(content.category[0]) ||
+            this.selectedValue.ages.includes(content.age[0])
           ) {
             this.boxShowState.push(true)
           } else {
             this.boxShowState.push(false)
           }
-        } else {
-          return false
         }
+      })
+      if (!this.boxShowState.includes(true)) {
+        this.noItemMessage =
+          '当てはまる恐竜はいませんでした。条件を変えて検索してください。'
+      }
+    },
+    setSelectedValues() {
+      const ul = document.createElement('ul')
+      let convertedCategory = ''
+      let convertedAge = ''
+      this.selectedValue.categories.forEach((category) => {
+        const li = document.createElement('li')
+        convertedCategory = this.$setDinosaurCategory(category)
+        li.textContent = convertedCategory
+        li.classList.add('p-dinosaur__category')
+        li.setAttribute('data-category', category)
+        ul.appendChild(li)
+      })
+      this.selectedValue.ages.forEach((age) => {
+        const li = document.createElement('li')
+        convertedAge = this.$setDinosaurAge(age)
+        li.textContent = convertedAge
+        li.classList.add('p-dinosaur__age')
+        li.setAttribute('data-category', age)
+        ul.appendChild(li)
+      })
+      this.$nextTick(() => {
+        const valueSetTarget = document.getElementById('selectedValue')
+        while (valueSetTarget.firstElementChild) {
+          const removeItem = valueSetTarget.firstElementChild
+          valueSetTarget.removeChild(removeItem)
+        }
+        valueSetTarget.appendChild(ul)
       })
     },
   },

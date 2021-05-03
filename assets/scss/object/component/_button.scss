@@ -60,6 +60,12 @@
   border-radius: 4px;
   font-size: .9rem;
 }
+/**
+  * Button --reset
+  */  
+.c-button--reset {
+  @include buttonReset(transparent);
+}
 // -----------------------------------------------------------------
 // Like Button
 // -----------------------------------------------------------------

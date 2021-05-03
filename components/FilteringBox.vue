@@ -84,6 +84,8 @@ export default {
         dinosaurCategory: this.dinosaurCategory,
         dinosaurAge: this.dinosaurAge,
       })
+      this.dinosaurCategory = []
+      this.dinosaurAge = []
     },
   },
 }

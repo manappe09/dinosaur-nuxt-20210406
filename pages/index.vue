@@ -12,7 +12,7 @@
           :key="news.id"
           class="p-newstop__item"
         >
-          <NuxtLink to="/news/4" class="p-newstop__title">
+          <NuxtLink :to="`/news/${news.id}`" class="p-newstop__title">
             <span class="p-news__category" :data-category="news.category[0]">{{
               $setNewsCategory(news.category[0])
             }}</span
@@ -90,7 +90,7 @@
                 >{{ $setMuseumCategory(museum.category[0]) }}</span
               >
               <p>{{ museum.title }}</p>
-              <div v-html="museum.text" class="p-museumtop__text"></div>
+              <div class="p-museumtop__text" v-html="museum.text"></div>
             </div>
           </NuxtLink>
         </li>
@@ -144,7 +144,7 @@
                 >{{ $setColumnCategory(column.category[0]) }}</span
               >
               <p>{{ column.title }}</p>
-              <div v-html="column.text" class="p-columntop__text"></div>
+              <div class="p-columntop__text" v-html="column.text"></div>
             </div>
           </NuxtLink>
         </li>

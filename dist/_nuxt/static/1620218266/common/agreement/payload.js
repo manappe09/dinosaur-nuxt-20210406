@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/common/agreement", {data:[{}],fetch:{},mutations:[]});

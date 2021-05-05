@@ -44,7 +44,7 @@
     <!-- /恐竜を探す -->
     <!-- 恐竜ランキング -->
     <section class="p-rankingtop u-mgb-80">
-      <h2 class="c-title c-title--primary u-align-c u-mgb-20">
+      <h2 class="c-title c-title--primary u-mgb-20 u-align-c">
         恐竜人気ランキング
       </h2>
       <ul class="p-rankingtop__list">
@@ -63,7 +63,7 @@
     <!-- /恐竜ランキング -->
     <!-- 博物館・公園 -->
     <section class="p-museumtop u-mgb-40">
-      <h2 class="c-title c-title--primary c-title--accent u-align-c u-mgb-20">
+      <h2 class="c-title c-title--primary c-title--accent u-mgb-20">
         恐竜に会いにいく
       </h2>
       <ul class="p-museumtop__list">
@@ -120,7 +120,7 @@
     <!-- /バナー -->
     <!-- コラム -->
     <section class="p-columntop u-mgb-40">
-      <h2 class="c-title c-title--primary c-title--accent u-align-c u-mgb-20">
+      <h2 class="c-title c-title--primary c-title--accent u-mgb-20">
         コラムを読む
       </h2>
       <ul class="p-columntop__list">

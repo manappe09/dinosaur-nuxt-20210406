@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/guide/mailmagazine", {data:[{}],fetch:{},mutations:[]});

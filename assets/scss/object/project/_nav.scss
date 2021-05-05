@@ -22,8 +22,7 @@
   @include buttonReset;
   width: 45px;
   height: 45px;
-  margin-left: auto;
-  margin: 2vw auto 2vw 66vw;
+  margin: 2vw auto 2vw calc(100% - .5rem);
   background-color: #fff;
   line-height: 45px;
   border: none;
@@ -31,6 +30,7 @@
   color: $main-100-c;
   font-size: 3rem;
   font-weight: 900;
+  transform: translateX(-100%);
 }
 .p-nav__list {
   width: 90%;

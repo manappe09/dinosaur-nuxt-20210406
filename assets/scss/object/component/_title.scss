@@ -5,9 +5,9 @@
  * Title
  */
 .c-title {
-  margin: 3.5rem auto;
+  display: block;
+  margin: 3.5rem auto auto;
   font-size: 1.4rem;
-  font-weight: bold;
   @include font-rocknroll;
 }
 

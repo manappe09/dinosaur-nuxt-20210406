@@ -55,7 +55,6 @@ export default {
   },
   methods: {
     closeNav() {
-      console.log('close nav')
       this.toggleNavState = false
     },
   },

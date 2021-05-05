@@ -2,7 +2,7 @@
   <main class="l-main">
     <!-- スライダー -->
     <!-- TODO: あとでいれる -->
-    <!-- <SwiperTop /> -->
+    <SwiperTop />
     <!-- /スライダー -->
     <!-- 最近のお知らせ -->
     <section class="p-newstop u-mgt-40 u-mgb-80">

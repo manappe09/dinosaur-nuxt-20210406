@@ -17,8 +17,8 @@ export const mutations = {
   },
 }
 
-// export const actions = {
-//   add({commit}, todo) {
-
-//   }
-// }
+export const actions = {
+  add({ commit }, todo) {
+    commit('add', todo)
+  },
+}

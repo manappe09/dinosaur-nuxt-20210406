@@ -67,23 +67,28 @@
 
 <script>
 export default {
-  props: ['filteringBoxState'],
   data() {
     return {
       dinosaurCategory: [],
       dinosaurAge: [],
     }
   },
+  computed: {
+    filteringBoxState() {
+      return this.$store.state.filter.filteringBoxState
+    },
+  },
   methods: {
     hideFilteringBox() {
-      this.$emit('hide-filtering-box', false)
+      this.$store.dispatch('filter/toggleFilteringBox', false)
     },
     filterContents() {
-      this.$emit('hide-filtering-box', false)
-      this.$emit('filtered-contents', {
-        dinosaurCategory: this.dinosaurCategory,
-        dinosaurAge: this.dinosaurAge,
+      this.$store.dispatch('filter/toggleFilteringBox', false)
+      this.$store.dispatch('filter/setSelectedValue', {
+        categories: this.dinosaurCategory,
+        ages: this.dinosaurAge,
       })
+      this.$emit('filtered')
       this.dinosaurCategory = []
       this.dinosaurAge = []
     },

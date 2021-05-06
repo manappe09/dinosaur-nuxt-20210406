@@ -70,6 +70,11 @@
     <h2>見出し</h2>
     <h2 class="c-title">コンテンツのタイトル</h2>
     <h2 class="c-title u-align-c c-title--accent">コンテンツのタイトル</h2>
+    <h2>Vuex demo</h2>
+    <!-- demo -->
+    <input type="text" @keyup.enter="demo" />
+    <p>{{ todos }}</p>
+    <!-- /demo -->
     <h2>検索窓</h2>
     {/*
     <!-- <fa icon="search" class="fas" /> -->
@@ -84,3 +89,18 @@
     </ul>
   </main>
 </template>
+
+<script>
+export default {
+  computed: {
+    todos() {
+      return this.$store.state.todos.list
+    },
+  },
+  methods: {
+    demo(e) {
+      this.$store.dispatch('todos/add', e.target.value)
+    },
+  },
+}
+</script>

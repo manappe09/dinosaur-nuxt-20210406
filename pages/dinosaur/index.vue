@@ -9,11 +9,7 @@
       >
         <fa icon="search" class="fas c-filter__icon" />絞り込み検索
       </button>
-      <FilteringBox
-        :filtering-box-state="filteringBoxState"
-        @hide-filtering-box="filteringBoxState = $event"
-        @filtered-contents="filterContents($event)"
-      />
+      <FilteringBox @filtered="filterContents()" />
       <div class="c-filter__select__wrapper u-mgt-10 u-mgb-40">
         <select class="c-filter__select">
           <option value="popular" selected>人気順</option>
@@ -80,10 +76,6 @@ export default {
       filteredContents: [],
       boxShowState: [],
       noItemMessage: '',
-      selectedValue: {
-        categories: [],
-        ages: [],
-      },
       isFiltered: false,
     }
   },
@@ -93,7 +85,9 @@ export default {
   },
   methods: {
     toggleFilteringBox() {
-      this.filteringBoxState = !this.filteringBoxState
+      let filteringBoxState = this.$store.state.filter.filteringBoxState
+      filteringBoxState = !filteringBoxState
+      this.$store.dispatch('filter/toggleFilteringBox', filteringBoxState)
     },
     showAllBoxes() {
       this.boxShowState = []
@@ -103,33 +97,28 @@ export default {
         this.boxShowState.push(true)
       }
     },
-    filterContents($event) {
-      this.selectedValue.categories = $event.dinosaurCategory
-      this.selectedValue.ages = $event.dinosaurAge
+    filterContents() {
+      const selectedCategories = this.$store.state.filter.selectedValue
+        .categories
+      const selectedAges = this.$store.state.filter.selectedValue.ages
       this.boxShowState = []
       this.noItemMessage = ''
       this.isFiltered = true
-      this.setSelectedValues()
+      this.setSelectedValues(selectedCategories, selectedAges)
       this.contents.forEach((content) => {
-        if (
-          this.selectedValue.categories.length > 0 &&
-          this.selectedValue.ages.length > 0
-        ) {
+        if (selectedCategories.length > 0 && selectedAges.length > 0) {
           if (
-            this.selectedValue.categories.includes(content.category[0]) &&
-            this.selectedValue.ages.includes(content.age[0])
+            selectedCategories.includes(content.category[0]) &&
+            selectedAges.includes(content.age[0])
           ) {
             this.boxShowState.push(true)
           } else {
             this.boxShowState.push(false)
           }
-        } else if (
-          this.selectedValue.categories.length > 0 ||
-          this.selectedValue.ages.length > 0
-        ) {
+        } else if (selectedCategories.length > 0 || selectedAges.length > 0) {
           if (
-            this.selectedValue.categories.includes(content.category[0]) ||
-            this.selectedValue.ages.includes(content.age[0])
+            selectedCategories.includes(content.category[0]) ||
+            selectedAges.includes(content.age[0])
           ) {
             this.boxShowState.push(true)
           } else {
@@ -142,11 +131,11 @@ export default {
           '当てはまる恐竜はいませんでした。条件を変えて検索してください。'
       }
     },
-    setSelectedValues() {
+    setSelectedValues(selectedCategories, selectedAges) {
       const ul = document.createElement('ul')
       let convertedCategory = ''
       let convertedAge = ''
-      this.selectedValue.categories.forEach((category) => {
+      selectedCategories.forEach((category) => {
         const li = document.createElement('li')
         convertedCategory = this.$setDinosaurCategory(category)
         li.textContent = convertedCategory
@@ -154,7 +143,7 @@ export default {
         li.setAttribute('data-category', category)
         ul.appendChild(li)
       })
-      this.selectedValue.ages.forEach((age) => {
+      selectedAges.forEach((age) => {
         const li = document.createElement('li')
         convertedAge = this.$setDinosaurAge(age)
         li.textContent = convertedAge

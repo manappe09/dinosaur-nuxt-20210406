@@ -88,5 +88,10 @@ export default {
       name: 'ティラノサウルス',
     }
   },
+  head() {
+    return {
+      title: `${this.title}`,
+    }
+  },
 }
 </script>

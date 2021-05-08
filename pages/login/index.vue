@@ -17,3 +17,13 @@
     >
   </main>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: 'ログイン',
+    }
+  },
+}
+</script>

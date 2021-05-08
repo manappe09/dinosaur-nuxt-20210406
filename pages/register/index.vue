@@ -11,3 +11,13 @@
     <button class="c-button c-button--primary u-mgt-40 u-mgb-20">登録</button>
   </main>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: '新規登録',
+    }
+  },
+}
+</script>

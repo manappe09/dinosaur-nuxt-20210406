@@ -26,6 +26,11 @@ export default {
     const data = await $axios.$get('news')
     return data
   },
+  head() {
+    return {
+      title: 'お知らせ一覧',
+    }
+  },
   mounted() {
     // APIで取得したデータがdataとマージされ下記に格納される
     console.log(this.contents)

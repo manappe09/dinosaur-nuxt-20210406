@@ -122,3 +122,13 @@
     <NuxtLink to="" class="c-listitem c-listitem--next">ログアウト</NuxtLink>
   </main>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: 'マイページ',
+    }
+  },
+}
+</script>

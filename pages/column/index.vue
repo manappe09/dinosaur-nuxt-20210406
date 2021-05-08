@@ -36,5 +36,10 @@ export default {
       error(e)
     }
   },
+  head() {
+    return {
+      title: 'コラム一覧',
+    }
+  },
 }
 </script>

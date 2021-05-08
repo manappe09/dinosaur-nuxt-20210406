@@ -24,5 +24,10 @@ export default {
       error(e)
     }
   },
+  head() {
+    return {
+      title: `${this.title}`,
+    }
+  },
 }
 </script>

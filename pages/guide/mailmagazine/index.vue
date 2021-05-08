@@ -14,3 +14,13 @@
     >
   </main>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: 'メールマガジンについて',
+    }
+  },
+}
+</script>

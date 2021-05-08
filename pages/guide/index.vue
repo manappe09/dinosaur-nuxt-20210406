@@ -36,3 +36,13 @@
     </ul>
   </main>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: 'ご利用ガイド',
+    }
+  },
+}
+</script>

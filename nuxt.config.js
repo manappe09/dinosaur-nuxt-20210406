@@ -4,14 +4,20 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'dinosaur-nuxt-20210406',
+    title: '君だけの恐竜ずかんを持ち歩こう！',
+    titleTemplate: '%s | 恐竜ずかん',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          '自分だけの恐竜ずかんを持ち運ぼう！サイトの中から好きな恐竜や、行ってみたい博物館を登録！モバイルの中に好きな恐竜を入れて探検しよう。',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

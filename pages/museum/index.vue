@@ -41,6 +41,11 @@ export default {
       error(e)
     }
   },
+  head() {
+    return {
+      title: '博物館・公園一覧',
+    }
+  },
   mounted() {
     // pluginに定義した関数を呼び出す
     this.$hello('everyone!')

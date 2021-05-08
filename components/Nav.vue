@@ -6,12 +6,22 @@
         <p class="p-nav__category">カテゴリからさがす</p>
         <ul class="p-nav__sublist">
           <li class="p-nav__subitem">
-            <NuxtLink to="/dinosaur" @click.native="closeNav()"
+            <NuxtLink
+              to="/dinosaur"
+              @click.native="
+                setFilterValue('dragon')
+                closeNav()
+              "
               >竜盤目</NuxtLink
             >
           </li>
           <li class="p-nav__subitem">
-            <NuxtLink to="/dinosaur" @click.native="closeNav()"
+            <NuxtLink
+              to="/dinosaur"
+              @click.native="
+                setFilterValue('bird')
+                closeNav()
+              "
               >鳥盤目</NuxtLink
             >
           </li>
@@ -56,6 +66,10 @@ export default {
   methods: {
     closeNav() {
       this.toggleNavState = false
+    },
+    setFilterValue(value) {
+      const valueArray = [value]
+      this.$store.dispatch('filter/setSelectedValue', valueArray)
     },
   },
 }

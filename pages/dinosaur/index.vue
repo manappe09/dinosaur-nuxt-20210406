@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="['恐竜をさがす']" />
     <h2 class="c-title c-title--accent u-align-c">恐竜のなかまたち</h2>
     <div class="c-filter">
       <button
@@ -11,7 +11,7 @@
       </button>
       <FilteringBox @filtered="filterContents()" />
       <div class="c-filter__select__wrapper u-mgt-10 u-mgb-40">
-        <select class="c-filter__select">
+        <select class="c-filter__select" disabled>
           <option value="popular" selected>人気順</option>
           <option value="name">50音順</option>
         </select>
@@ -77,6 +77,11 @@ export default {
       boxShowState: [],
       noItemMessage: '',
       isFiltered: false,
+    }
+  },
+  head() {
+    return {
+      title: '恐竜をさがす',
     }
   },
   mounted() {

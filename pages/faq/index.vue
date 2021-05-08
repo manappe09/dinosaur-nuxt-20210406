@@ -40,3 +40,13 @@
     </ul>
   </main>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: 'よくある質問',
+    }
+  },
+}
+</script>

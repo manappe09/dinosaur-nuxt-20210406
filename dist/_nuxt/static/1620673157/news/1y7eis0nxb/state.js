@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1620673157",layout:"default",error:a,state:{filter:{selectedValue:{categories:[],ages:[]},filteringBoxState:false},todos:{list:[]}},serverRendered:true,routePath:"\u002Fnews\u002F1y7eis0nxb",config:{_app:{basePath:"\u002F",assetsPath:"\u002F_nuxt\u002F",cdnURL:a}}}}(null));

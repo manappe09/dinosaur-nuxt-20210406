@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <div>
       <img
         :src="eyecatch.url"
@@ -33,6 +33,23 @@ export default {
     } catch (e) {
       error(e)
     }
+  },
+  data() {
+    return {
+      directories: [
+        {
+          name: 'コラム一覧',
+          path: '/column',
+        },
+        {
+          name: '',
+          path: `/column/${this.$route.params.slug}`,
+        },
+      ],
+    }
+  },
+  async fetch() {
+    this.directories[1].name = await this.title
   },
   head() {
     return {

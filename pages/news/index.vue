@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-title c-title--accent u-align-c">お知らせ一覧</h2>
     <ul class="p-news">
       <li
@@ -25,6 +25,16 @@ export default {
   async asyncData({ $axios }) {
     const data = await $axios.$get('news')
     return data
+  },
+  data() {
+    return {
+      directories: [
+        {
+          name: 'お知らせ一覧',
+          path: '/news',
+        },
+      ],
+    }
   },
   head() {
     return {

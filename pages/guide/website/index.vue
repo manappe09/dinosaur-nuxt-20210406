@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-subtitle u-mgt-10">このサイトについて</h2>
     <hr />
     <p class="c-sentence">
@@ -17,6 +17,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      directories: [
+        {
+          name: 'このサイトについて',
+          path: '/website',
+        },
+      ],
+    }
+  },
   head() {
     return {
       title: 'このサイトについて',

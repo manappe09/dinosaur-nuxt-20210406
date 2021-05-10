@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs :directories="['恐竜をさがす']" />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-title c-title--accent u-align-c">恐竜のなかまたち</h2>
     <div class="c-filter">
       <button
@@ -77,6 +77,12 @@ export default {
       boxShowState: [],
       noItemMessage: '',
       isFiltered: false,
+      directories: [
+        {
+          name: '恐竜一覧',
+          path: '/dinosaur',
+        },
+      ],
     }
   },
   head() {

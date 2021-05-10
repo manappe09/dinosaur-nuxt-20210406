@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <div>
       <img
         class="p-museum__eyecatch"
@@ -32,6 +32,23 @@ export default {
     } catch (e) {
       error(e)
     }
+  },
+  data() {
+    return {
+      directories: [
+        {
+          name: '博物館・公園一覧',
+          path: '/museum',
+        },
+        {
+          name: '',
+          path: `/museum/${this.$route.params.slug}`,
+        },
+      ],
+    }
+  },
+  async fetch() {
+    this.directories[1].name = await this.title
   },
   head() {
     return {

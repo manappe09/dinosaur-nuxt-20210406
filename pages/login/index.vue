@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-title c-title--accent u-mgt-40 u-align-c">ログイン</h2>
     <label for="email">メールアドレス</label>
     <input id="email" type="email" /><br />
@@ -20,6 +20,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      directories: [
+        {
+          name: 'ログイン',
+          path: '/login',
+        },
+      ],
+    }
+  },
   head() {
     return {
       title: 'ログイン',

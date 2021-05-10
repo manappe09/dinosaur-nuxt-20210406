@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-title c-title--accent u-align-c">ご利用ガイド</h2>
     <ul class="p-guide">
       <li class="p-guide__item c-listitem c-listitem--next">
@@ -39,6 +39,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      directories: [
+        {
+          name: 'ご利用ガイド',
+          path: '/guide',
+        },
+      ],
+    }
+  },
   head() {
     return {
       title: 'ご利用ガイド',

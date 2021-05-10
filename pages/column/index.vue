@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-title c-title--accent u-align-c">コラム一覧</h2>
     <ul class="p-column__list">
       <li v-for="content in contents" :key="content.id">
@@ -34,6 +34,16 @@ export default {
       return data
     } catch (e) {
       error(e)
+    }
+  },
+  data() {
+    return {
+      directories: [
+        {
+          name: 'コラム一覧',
+          path: '/column',
+        },
+      ],
     }
   },
   head() {

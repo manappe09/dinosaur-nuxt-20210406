@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <div>
       <div class="p-dinosaur__slide">
         <img
@@ -86,7 +86,20 @@ export default {
         name: '博物館',
       },
       name: 'ティラノサウルス',
+      directories: [
+        {
+          name: '恐竜一覧',
+          path: '/dinosaur',
+        },
+        {
+          name: '',
+          path: `/dinosaur/${this.$route.params.slug}`,
+        },
+      ],
     }
+  },
+  async fetch() {
+    this.directories[1].name = await this.name
   },
   head() {
     return {

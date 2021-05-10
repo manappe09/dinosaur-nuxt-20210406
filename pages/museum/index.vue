@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-title c-title--accent u-align-c">博物館・公園一覧</h2>
     <ul class="p-museum__list">
       <li v-for="content in contents" :key="content.id">
@@ -39,6 +39,16 @@ export default {
       return data
     } catch (e) {
       error(e)
+    }
+  },
+  data() {
+    return {
+      directories: [
+        {
+          name: '博物館・恐竜一覧',
+          path: '/museum',
+        },
+      ],
     }
   },
   head() {

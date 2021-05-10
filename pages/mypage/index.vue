@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-title c-title--accent u-mgt-20 u-align-c">マイページ</h2>
     <p class="p-mypage__name">ニックネーム</p>
     <h3 class="c-subtitle">お気に入りした恐竜</h3>
@@ -125,6 +125,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      directories: [
+        {
+          name: 'マイページ',
+          path: '/mypage',
+        },
+      ],
+    }
+  },
   head() {
     return {
       title: 'マイページ',

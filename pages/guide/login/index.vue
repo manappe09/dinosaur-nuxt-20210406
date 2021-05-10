@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-subtitle u-mgt-10">ログインの仕方</h2>
     <hr />
     <p class="c-sentence">

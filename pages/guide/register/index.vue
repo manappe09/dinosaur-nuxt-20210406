@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-subtitle u-mgt-10">登録方法について</h2>
     <hr />
     <p class="c-sentence">
@@ -17,6 +17,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      directories: [
+        {
+          name: 'セキュリティについて',
+          path: '/sequrity',
+        },
+      ],
+    }
+  },
   head() {
     return {
       title: '登録方法について',

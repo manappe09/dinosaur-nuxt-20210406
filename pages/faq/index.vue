@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-title c-title--accent u-align-c">よくある質問</h2>
     <ul class="p-faq">
       <li class="p-faq__item c-listitem">
@@ -43,6 +43,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      directories: [
+        {
+          name: 'よくある質問',
+          path: '/faq',
+        },
+      ],
+    }
+  },
   head() {
     return {
       title: 'よくある質問',

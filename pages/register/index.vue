@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <h2 class="c-title c-title--accent u-mgt-40 u-align-c">新規登録</h2>
     <label for="nickname">ニックネーム</label>
     <input type="text" id="nickname" /><br />
@@ -14,6 +14,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      directories: [
+        {
+          name: '新規登録',
+          path: '/register',
+        },
+      ],
+    }
+  },
   head() {
     return {
       title: '新規登録',

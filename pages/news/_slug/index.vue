@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs />
+    <Breadcrumbs :directories="directories" />
     <span class="p-news__category" :data-category="category[0]">{{
       $setNewsCategory(category[0])
     }}</span>
@@ -23,6 +23,23 @@ export default {
     } catch (e) {
       error(e)
     }
+  },
+  data() {
+    return {
+      directories: [
+        {
+          name: 'お知らせ一覧',
+          path: '/news',
+        },
+        {
+          name: '',
+          path: `/news/${this.$route.params.slug}`,
+        },
+      ],
+    }
+  },
+  async fetch() {
+    this.directories[1].name = await this.title
   },
   head() {
     return {

@@ -181,6 +181,9 @@ export default {
     setSlicedArray(array, quantity) {
       return array.slice(0, quantity)
     },
+    setNewsCategory(category) {
+      console.log(category)
+    },
   },
 }
 </script>

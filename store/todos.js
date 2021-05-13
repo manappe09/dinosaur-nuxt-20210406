@@ -1,5 +1,5 @@
 export const state = () => ({
-  list: [],
+  list: ['色々'],
 })
 
 export const mutations = {

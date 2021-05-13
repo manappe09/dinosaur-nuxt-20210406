@@ -1,6 +1,11 @@
 <template>
   <main class="l-main">
     <Breadcrumbs :directories="directories" />
+    <!-- ローカルにmapGettersでstore内のjsonデータにアクセスするパターン -->
+    <!-- <span class="p-news__category" :data-category="category[0]">{{
+      setNewsCategory(category[0])
+    }}</span> -->
+    <!-- グローバルの場合 -->
     <span class="p-news__category" :data-category="category[0]">{{
       $setNewsCategory(category[0])
     }}</span>
@@ -15,6 +20,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'Vuex'
+
 export default {
   async asyncData({ $axios, params, error }) {
     try {
@@ -29,7 +36,7 @@ export default {
       directories: [
         {
           name: 'お知らせ一覧',
-          path: '/news',
+          path: '/news/',
         },
         {
           name: '',
@@ -45,6 +52,19 @@ export default {
     return {
       title: `${this.title}`,
     }
+  },
+  computed: {
+    ...mapGetters({
+      convertData: 'convertData/convertData',
+    }),
+  },
+  methods: {
+    setNewsCategory(category) {
+      const returnItem = this.convertData.news.filter(
+        (news) => news.name === category
+      )
+      return returnItem[0].ja
+    },
   },
 }
 </script>

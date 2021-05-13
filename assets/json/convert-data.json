@@ -1,0 +1,101 @@
+{
+  "news": [
+    {
+      "name": "news",
+      "ja": "お知らせ"
+    },
+    {
+      "name": "announce",
+      "ja": "ご注意"
+    }
+  ],
+  "museum": [
+    {
+      "name": "park",
+      "ja": "公園"
+    },
+    {
+      "name": "museum",
+      "ja": "博物館"
+    }
+  ],
+  "column": [
+    {
+      "name": "dinosaur",
+      "ja": "恐竜のこと"
+    },
+    {
+      "name": "history",
+      "ja": "恐竜の歴史"
+    },
+    {
+      "name": "event",
+      "ja": "イベント情報"
+    },
+    {
+      "name": "tips",
+      "ja": "豆知識"
+    }
+  ],
+  "dinosaur": {
+    "category": [
+      {
+        "name": "dragon",
+        "ja": "竜盤目"
+      },
+      {
+        "name": "bird",
+        "ja": "鳥盤目"
+      }
+    ],
+    "age": [
+      {
+        "name": "jurassic",
+        "ja": "ジュラ紀"
+      },
+      {
+        "name": "cretaceous",
+        "ja": "白亜紀"
+      }
+    ]
+  },
+  "common": {
+    "area": [
+      {
+        "name": "tokyo",
+        "ja": "東京",
+        "area": "kanto"
+      },
+      {
+        "name": "chiba",
+        "ja": "千葉",
+        "area": "kanto"
+      },
+      {
+        "name": "tochigi",
+        "ja": "栃木",
+        "area": "kanto"
+      },
+      {
+        "name": "ishikawa",
+        "ja": "石川",
+        "area": "chubu"
+      },
+      {
+        "name": "kyoto",
+        "ja": "京都",
+        "area": "kansai"
+      },
+      {
+        "name": "ibaraki",
+        "ja": "茨城",
+        "area": "kanto"
+      },
+      {
+        "name": "osaka",
+        "ja": "大阪",
+        "area": "kansai"
+      }
+    ]
+  }
+}

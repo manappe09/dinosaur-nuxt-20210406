@@ -3,7 +3,6 @@ function setDate(date) {
   return newDate
 }
 
-// eslint-disable-next-line no-empty-pattern
-export default ({}, inject) => {
+export default (context, inject) => {
   inject('setDate', setDate)
 }

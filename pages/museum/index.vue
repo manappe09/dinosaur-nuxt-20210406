@@ -20,7 +20,7 @@
             <span
               class="p-museum__category"
               :data-category="content.category[0]"
-              >{{ $setNewsCategory(content.category[0]) }}</span
+              >{{ $setMuseumCategory(content.category[0]) }}</span
             >
           </div>
         </NuxtLink>
@@ -55,10 +55,6 @@ export default {
     return {
       title: '博物館・公園一覧',
     }
-  },
-  mounted() {
-    // pluginに定義した関数を呼び出す
-    this.$hello('everyone!')
   },
 }
 </script>

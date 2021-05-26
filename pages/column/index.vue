@@ -14,10 +14,17 @@
           />
           <div class="c-box__text c-box__text--row">
             <p>{{ content.title }}</p>
-            <span
+            <!-- 自作json, pluginで変換した場合 -->
+            <!-- <span
               class="p-column__category"
               :data-category="content.category[0]"
               >{{ $setColumnCategory(content.category[0]) }}</span
+            > -->
+            <!-- microCMSでコンテンツ参照を用いた場合 -->
+            <span
+              class="p-column__category"
+              :data-category="content.categoryJapanese.name"
+              >{{ content.categoryJapanese.ja }}</span
             >
           </div>
         </NuxtLink>

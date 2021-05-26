@@ -16,11 +16,12 @@
       <hr />
     </div>
     <div v-html="text"></div>
-    <NuxtLink
-      to="/column"
-      class="c-button c-button--secondary u-mgt-80 u-mgb-80"
-      >＜&nbsp;コラム一覧へ戻る</NuxtLink
-    >
+    <Button
+      :linkto="'column'"
+      :level="'secondary'"
+      :label="'＜ コラム一覧へ戻る'"
+      class="u-mgt-80 u-mgb-80"
+    />
   </main>
 </template>
 

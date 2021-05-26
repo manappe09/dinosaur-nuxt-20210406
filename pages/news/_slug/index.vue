@@ -13,9 +13,12 @@
     <h2 class="c-subtitle u-mgt-10">{{ title }}</h2>
     <hr />
     <p v-html="text01"></p>
-    <NuxtLink to="/news" class="c-button c-button--secondary u-mgt-40"
-      >お知らせ一覧へ戻る</NuxtLink
-    >
+    <Button
+      :linkto="'news'"
+      :level="'secondary'"
+      :label="'お知らせ一覧へ戻る'"
+      class="u-mgt-40"
+    />
   </main>
 </template>
 
@@ -60,10 +63,10 @@ export default {
   },
   methods: {
     setNewsCategory(category) {
-      const returnItem = this.convertData.news.filter(
+      const [returnItem] = this.convertData.news.filter(
         (news) => news.name === category
       )
-      return returnItem[0].ja
+      return returnItem.ja
     },
   },
 }

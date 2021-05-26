@@ -15,11 +15,12 @@
       <hr />
     </div>
     <div v-html="text"></div>
-    <NuxtLink
-      to="/museum"
-      class="c-button c-button--secondary u-mgt-80 u-mgb-80"
-      >＜&nbsp;博物館・公園一覧へ戻る</NuxtLink
-    >
+    <Button
+      :linkto="'museum'"
+      :level="'secondary'"
+      :label="'＜ 博物館・公園一覧へ戻る'"
+      class="u-mgt-80 u-mgb-80"
+    />
   </main>
 </template>
 

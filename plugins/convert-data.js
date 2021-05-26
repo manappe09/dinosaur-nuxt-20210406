@@ -9,8 +9,9 @@ export default ({ store }, inject) => {
   // news: categoryリスト
   inject('setNewsCategory', (category) => {
     const datas = convertTargetDatas.news
-    const returnData = datas.filter((data) => data.name === category)
-    return returnData[0].ja
+    // 分割代入の場合
+    const [returnData] = datas.filter((data) => data.name === category)
+    return returnData.ja
   })
   // museum: categoryリスト
   inject('setMuseumCategory', (category) => {

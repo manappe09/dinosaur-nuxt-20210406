@@ -20,9 +20,12 @@
           </NuxtLink>
         </li>
       </ul>
-      <NuxtLink to="/news" class="c-button c-button--third u-mgt-20"
-        >お知らせ一覧へ</NuxtLink
-      >
+      <Button
+        :linkto="'news'"
+        :level="'third'"
+        :label="'お知らせ一覧へ'"
+        class="u-mgt-20"
+      />
     </section>
     <!-- /最近のお知らせ -->
     <!-- 恐竜を探す -->
@@ -95,9 +98,11 @@
           </NuxtLink>
         </li>
       </ul>
-      <NuxtLink to="/museum" class="c-button c-button--primary"
-        >博物館・公園一覧へ</NuxtLink
-      >
+      <Button
+        :linkto="'museum'"
+        :level="'primary'"
+        :label="'博物館・公園一覧へ'"
+      />
     </section>
     <!-- /博物館・公園 -->
     <!-- バナー -->
@@ -149,9 +154,14 @@
           </NuxtLink>
         </li>
       </ul>
-      <NuxtLink to="/column" class="c-button c-button--primary"
+      <!-- <NuxtLink to="/column" class="c-button c-button--primary"
         >コラムをもっと読む</NuxtLink
-      >
+      > -->
+      <Button
+        :linkto="'column'"
+        :level="'primary'"
+        :label="'コラムをもっと読む'"
+      />
     </section>
     <!-- /コラム -->
   </main>

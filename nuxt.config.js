@@ -71,5 +71,7 @@ export default {
   build: {},
 
   // Storybook
-  storybook: {},
+  storybook: {
+    stories: ['~/stories/**/*.stories.js'],
+  },
 }

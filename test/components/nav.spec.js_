@@ -1,0 +1,16 @@
+// import { mount } from '@vue/test-utils'
+// import Nav from '~/components/Nav.vue'
+// import Header from '~/components/Header.vue'
+
+// describe('ハンバーガーメニューの挙動テスト', () => {
+//   test('Navがデフォルトで閉じられているか…の前にとりあえずnavが取得できているか', () => {
+//     const wrapper = mount(Nav)
+//     expect(wrapper.classes).toContain('p-nav')
+//   })
+//   test('ハンバーガーメニューのクリックでNavが開くか', async () => {
+//     const headerWrapper = mount(Header)
+//     const wrapper = mount(Nav)
+//     await headerWrapper.find('#menu').trigger('click')
+//     expect(wrapper.classses).toContain('is-open')
+//   })
+// })

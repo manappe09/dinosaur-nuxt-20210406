@@ -187,6 +187,10 @@ export default {
       error(e)
     }
   },
+  mounted() {
+    // 環境変数の勉強用
+    console.log(process.env.MESSAGE)
+  },
   methods: {
     setSlicedArray(array, quantity) {
       return array.slice(0, quantity)

@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -43,6 +45,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    '@nuxtjs/dotenv',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -63,8 +66,12 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://dinosaur-nuxt-20210406.microcms.io/api/v1/',
-    headers: { 'X-API-KEY': 'fb44c3f1-de38-4379-808e-34002dba69b4' },
+    baseURL: process.env.MICROCMS_BASE_URL,
+    headers: { 'X-API-KEY': process.env.MICROCMS_API_KEY },
+  },
+
+  dotenv: {
+    systemvars: true,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

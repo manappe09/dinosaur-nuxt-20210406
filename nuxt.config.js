@@ -75,7 +75,31 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    postcss: {
+      // プラグイン名をキーとして、引数を値として追加します
+      // npm または yarn を使って依存関係としてこれらを事前にインストールします
+      plugins: {
+        // false を値として渡しプラグインを無効にします
+        'postcss-url': false,
+        'postcss-nested': {},
+        'postcss-responsive-type': {},
+        'postcss-hexrgba': {},
+      },
+      preset: {
+        // postcss-preset-env の設定を変更します
+        autoprefixer: {
+          grid: true,
+        },
+      },
+    },
+    babel: {
+      presets({ isServer }, [preset, options]) {
+        // change options directly -> consoleにbabelのlooseの値がプラグインと一致していない警告がわんさか出たので対応
+        options.loose = true
+      },
+    },
+  },
 
   // Storybook
   storybook: {

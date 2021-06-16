@@ -30,6 +30,8 @@ jobs:
       #     pkg-manager: yarn 
       - run:
           name: Run tests
+          command: pwd
+          command: echo "This is a test."
           command: npm test
 
 workflows:

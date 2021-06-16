@@ -31,6 +31,9 @@ jobs:
       - run:
           name: Run tests
           command: npm test
+      - run: 
+          name: Nuxt generate
+          command: npm run generate
       - run: pwd
       - run: echo "This is a test."
 

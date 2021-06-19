@@ -1,6 +1,6 @@
 <template>
   <main class="l-main">
-    <Breadcrumbs :directories="directories" />
+    <Breadcrumbs />
     <h2 class="c-subtitle u-mgt-20">お問い合わせ</h2>
     <hr />
     <p class="c-sentence">

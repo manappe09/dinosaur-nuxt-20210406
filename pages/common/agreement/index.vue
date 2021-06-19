@@ -14,6 +14,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      directories: [
+        {
+          name: '利用規約',
+          path: '/common/agreement/',
+        },
+      ],
+    }
+  },
   head() {
     return {
       title: '利用規約',

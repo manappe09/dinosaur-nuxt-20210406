@@ -3,7 +3,7 @@
     <button id="nav-close" class="p-nav__close" @click="closeNav">×</button>
     <ul class="p-nav__list">
       <li class="p-nav__item">
-        <p class="p-nav__category">カテゴリからさがす</p>
+        <p class="p-nav__category">カテゴリから探す</p>
         <ul class="p-nav__sublist">
           <li class="p-nav__subitem">
             <NuxtLink

@@ -45,8 +45,9 @@ jobs:
       - node/install-packages
       - run: git config user.name $GITHUB_NAME  # GitHubのアカウント情報を設定
       - run: git config user.email $GITHUB_EMAIL
-      # - run: npm run generate  # 公開ファイルを生成
-      - run: npm run deploy   # gh-pagesブランチへpush
+      - run: npm run generate  # 公開ファイルを生成
+      - run: git commit -am'nuxt generate'
+      - run: npm run deploy   # masterブランチへpush
 
 workflows:
   # Below is the definition of your workflow.

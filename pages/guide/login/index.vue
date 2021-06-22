@@ -20,6 +20,20 @@
 
 <script>
 export default {
+  data() {
+    return {
+      directories: [
+        {
+          name: 'ご利用ガイド',
+          path: '/guide',
+        },
+        {
+          name: 'ログインの仕方',
+          path: '/guide/login',
+        },
+      ],
+    }
+  },
   head() {
     return {
       title: 'ログインの仕方',

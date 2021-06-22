@@ -37,7 +37,7 @@ jobs:
       #     command: npm run generate
       - run: pwd
       - run: echo "This is a test."
-  generate:
+  deploy:
     docker:
       - image: cimg/node:15.1
     steps:
@@ -45,9 +45,10 @@ jobs:
       - node/install-packages
       - run: git config user.name $GITHUB_NAME  # GitHubのアカウント情報を設定
       - run: git config user.email $GITHUB_EMAIL
+      - run: git checkout master
+      - run: git merge develop
       - run: npm run generate  # 公開ファイルを生成
-      - run: git commit -am'nuxt generate' && git push
-      # - run: npm run deploy   # masterブランチへpush
+      - run: npm run deploy   # masterブランチへpush
 
 workflows:
   # Below is the definition of your workflow.
@@ -62,6 +63,6 @@ workflows:
               only: develop
       # For running simple node tests, you could optionally use the node/test job from the orb to replicate and replace the job above in fewer lines.
       # - node/test
-      - generate:
+      - deploy:
           requires:
             - build-and-test

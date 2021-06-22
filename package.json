@@ -11,7 +11,8 @@
     "lint": "npm run lint:js",
     "test": "jest",
     "deploy": "git push",
-    "story": "npx nuxt storybook"
+    "story": "npx nuxt storybook",
+    "demo": "echo 'Demo'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

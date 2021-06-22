@@ -10,7 +10,7 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "test": "jest",
-    "deploy": "git push",
+    "deploy": "git commit -am'nuxt generate' && git push",
     "story": "npx nuxt storybook"
   },
   "dependencies": {

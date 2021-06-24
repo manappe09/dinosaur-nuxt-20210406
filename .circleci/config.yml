@@ -47,7 +47,7 @@ jobs:
       - run: git config user.email $GITHUB_EMAIL
       - run: git checkout master
       - run: git merge develop
-      - run: npm run generate  # 公開ファイルを生成
+      - run: npm run generate  # 公開ファイルを生成  
       - run: npm run deploy   # masterブランチへpush
 
 workflows:
